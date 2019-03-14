@@ -2,15 +2,129 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad26f09-c7d2-4613-b3d9-dc75550d74c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/db/db-pool.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/main-dispatcher.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/entity/courseOutline.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/entity/lectures.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/entity/student.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/app/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideaDataSources/a8528dac-167b-4fd9-af6b-6a48f6631dba.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideaDataSources/e0b83d06-95c4-402b-b01a-7f3566c5bb4a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/assigment-bo-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/assigment-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/courseOutline-bo-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/courseOutline-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/course_materials-bo-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/course_materials-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/lecture-bo-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/lecture-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/new_course-bo-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/new_course-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/student-bo-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/student-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/business/studentAssigment-bo-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/assigment-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/assigment-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/assigment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/courseOutline-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/course_materials-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/course_materials-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/assigment-dao-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/assigment-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/assigment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/courseOutline-dao-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/course_materials-dao-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/course_materials-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/lecture-dao-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/lecture-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/new_course-dao-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/new_course-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/student-dao-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/student-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/impl/studentAssigment-dao-impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/lecture-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/lecture-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/new_course-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/new_course-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/student-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/student-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/custom/studentAssigment-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/dao-factore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dao/super-dao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/assigment-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/courseOutline-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/course_materials-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/lecture-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/new_course-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/student-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/studentAssigment-dispatcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/assigment-dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/assigment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/courseOutline-dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/courseOutline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/course_materials-dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/course_materials.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/lectures-dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/lectures.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/new_course-dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/new_course.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/student-dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/student.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/dto/studentAssigment-dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/app/dist/entity/studentAssigment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/dist/db/db-pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/dist/db/db-pool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/main-dispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/dist/dispatcher/main-dispatcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/dist/entity/assigment.js" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/dist/entity/assigment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/dist/entity/course_materials.js" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/dist/entity/course_materials.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/dist/entity/lectures.js" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/dist/entity/lectures.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/dist/entity/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/dist/entity/student.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/business/assigment-bo-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/business/assigment-bo-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/business/courseOutline-bo-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/business/courseOutline-bo-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/business/course_materials-bo-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/business/course_materials-bo-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/business/lecture-bo-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/business/lecture-bo-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/business/new_course-bo-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/business/new_course-bo-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/business/student-bo-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/business/student-bo-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/business/studentAssigment-bo-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/business/studentAssigment-bo-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/assigment-dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/assigment-dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/courseOutline-dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/courseOutline-dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/course_materials-dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/course_materials-dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/assigment-dao-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/assigment-dao-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/courseOutline-dao-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/courseOutline-dao-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/course_materials-dao-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/course_materials-dao-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/lecture-dao-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/lecture-dao-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/new_course-dao-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/new_course-dao-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/student-dao-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/student-dao-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/studentAssigment-dao-impl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/studentAssigment-dao-impl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/lecture-dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/lecture-dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/new_course-dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/new_course-dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/student-dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/student-dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/custom/studentAssigment-dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/custom/studentAssigment-dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dao/dao-factore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dao/dao-factore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/db/db-pool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/db/db-pool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/assigment-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/assigment-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/courseOutline-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/courseOutline-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/course_materials-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/course_materials-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/lecture-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/lecture-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/main-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/main-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/new_course-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/new_course-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/student-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/student-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dispatcher/studentAssigment-dispatcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dispatcher/studentAssigment-dispatcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dto/assigment-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dto/assigment-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dto/courseOutline-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dto/courseOutline-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dto/course_materials-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dto/course_materials-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dto/lectures-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dto/lectures-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dto/new_course-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dto/new_course-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dto/student-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dto/student-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/dto/studentAssigment-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/dto/studentAssigment-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/entity/lectures.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/entity/lectures.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/entity/student.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/entity/student.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app/src/entity/studentAssigment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app/src/entity/studentAssigment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dilrukshi.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/Dilrukshi.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dilrukshi.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Dilrukshi.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/FrontEnd/assigment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/FrontEnd/assigment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/FrontEnd/course-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/FrontEnd/course-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/FrontEnd/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/FrontEnd/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/assigment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/assigment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/course-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/course-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/studentRegister.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/studentRegister.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,43 +133,62 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Itpm@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Itpm@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Itpm@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="itpm: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts">
+        <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/main-dispatcher.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="24" selection-start-line="2" selection-start-column="8" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="391">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+              <folding>
+                <element signature="n#express#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" lean-forward="true" selection-end-column="12" />
-            </state>
-          </provider>
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e0b83d06-95c4-402b-b01a-7f3566c5bb4a/console.sql">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/student.ts">
+        <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/assigment.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="85">
+              <caret line="5" column="6" lean-forward="true" selection-start-line="1" selection-end-line="8" selection-end-column="2" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/lectures.ts">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -63,6 +196,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -75,23 +209,61 @@
       <list>
         <option value="$PROJECT_DIR$/Back-End/tsconfig.json" />
         <option value="$PROJECT_DIR$/Back-End/package.json" />
-        <option value="$PROJECT_DIR$/Back-End/app/src/db/db-pool.ts" />
         <option value="$PROJECT_DIR$/Back-End/app/src/main.ts" />
         <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/mainDespatcher.ts" />
-        <option value="$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts" />
         <option value="$PROJECT_DIR$/Back-End/app/src/entity/admin.ts" />
-        <option value="$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts" />
         <option value="$PROJECT_DIR$/Back-End/app/src/entity/CourseOutline.ts" />
         <option value="$PROJECT_DIR$/Back-End/app/src/entity/courseOutline.ts" />
         <option value="$PROJECT_DIR$/Back-End/app/src/entity/assyment.ts" />
-        <option value="$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts" />
+        <option value="$PROJECT_DIR$/Front-End/studentRegister.html" />
         <option value="$PROJECT_DIR$/Back-End/app/src/entity/student.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/entity/lectures.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/student-dao.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/new_course-dao.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/lecture-dao.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/courseOutline-dao.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/course_materials-dao.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/course_materials-bo-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/lecture-bo-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/courseOutline-bo-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/new_course-bo-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/student-bo-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/assigment-bo-impl.js" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/assigment-dao.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/studentAssigment-bo-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/dao-factore.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/business/assigment-bo-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/courseOutline-dispatcher.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/lecture-dispatcher.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/new_course-dispatcher.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/student-dispatcher.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dto/new_course-dto.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/db/db-pool.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dto/assigment-dto.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/entity/studentAssigment.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dto/studentAssigment-dto.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/assigment-dispatcher.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/studentAssigment-dispatcher.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dto/course_materials-dto.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/course_materials-dispatcher.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/course_materials-dao-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/courseOutline-dao-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/lecture-dao-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/new_course-dao-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/student-dao-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/assigment-dao-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/studentAssigment-dao-impl.ts" />
+        <option value="$PROJECT_DIR$/Back-End/app/src/dispatcher/main-dispatcher.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="22" />
-    <option name="width" value="723" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="756" />
     <option name="height" value="722" />
   </component>
   <component name="ProjectView">
@@ -99,7 +271,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,7 +294,7 @@
               <item name="Dilrukshi" type="462c0819:PsiDirectoryNode" />
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
@@ -131,6 +302,58 @@
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dilrukshi" type="462c0819:PsiDirectoryNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dilrukshi" type="462c0819:PsiDirectoryNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dilrukshi" type="462c0819:PsiDirectoryNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dilrukshi" type="462c0819:PsiDirectoryNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dilrukshi" type="462c0819:PsiDirectoryNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dilrukshi" type="462c0819:PsiDirectoryNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
@@ -140,17 +363,41 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+            </path>
+            <path>
+              <item name="Dilrukshi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+              <item name="schema" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552451588728" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552589824794" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -158,7 +405,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Desktop\Dilrukshi\Back-End\app\src\db" />
+      <recent name="C:\Users\User\Desktop\Dilrukshi\Back-End\app\src\dao\custom\impl" />
+      <recent name="C:\Users\User\Desktop\Dilrukshi\Back-End\app\src\dao\custom" />
+      <recent name="C:\Users\User\Desktop\Dilrukshi\Back-End\app\src\dto" />
+      <recent name="C:\Users\User\Desktop\Dilrukshi\Back-End\app\src\business" />
+      <recent name="C:\Users\User\Desktop\Dilrukshi\Back-End\app\src\dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -173,6 +424,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JavaScript Debug.studentRegister.html">
+    <configuration name="studentProfileEdit.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Dilrukshi/Front-End/studentProfileEdit.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="studentRegister.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Dilrukshi/Front-End/studentRegister.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.studentRegister.html" />
+        <item itemvalue="JavaScript Debug.studentProfileEdit.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -186,26 +451,28 @@
       <workItem from="1552230883809" duration="2463000" />
       <workItem from="1552290063635" duration="1247000" />
       <workItem from="1552369263633" duration="8581000" />
+      <workItem from="1552458119401" duration="1801000" />
+      <workItem from="1552492904566" duration="9528000" />
+      <workItem from="1552546783759" duration="28114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12291000" />
+    <option name="totallyTimeSpent" value="51734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11270802" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -216,6 +483,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -224,85 +492,446 @@
       <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info active="true" anchor="right" id="Database" order="8" visible="true" weight="0.32980332" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Back-End/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/app/src/db/db-pool.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/main-dispatcher.ts">
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/student-dao.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding>
             <element signature="n#express#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/app/src/main.ts">
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/lecture-dao.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="68">
+          <caret line="4" column="27" selection-end-line="7" selection-end-column="1" />
           <folding>
             <element signature="n#express#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/lectures.ts">
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/courseOutline-bo-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" column="17" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/lecture-bo-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/new_course-bo-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="79" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/student-bo-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" column="11" selection-start-line="141" selection-start-column="11" selection-end-line="141" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/courseOutline-dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/course_materials-dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/assigment-bo-impl.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/assigment-dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/dao-factore.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/studentAssigment-dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/studentAssigment-bo-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="14" column="96" selection-start-line="14" selection-start-column="96" selection-end-line="14" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/courseOutline-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="65" selection-start-line="80" selection-start-column="65" selection-end-line="80" selection-end-column="65" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/lecture-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="80" column="225" selection-start-line="80" selection-start-column="225" selection-end-line="80" selection-end-column="225" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/new_course-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/student-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="80" column="200" selection-start-line="80" selection-start-column="200" selection-end-line="80" selection-end-column="200" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dto/new_course-dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/courseOutline.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="24" selection-start-line="2" selection-start-column="8" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" lean-forward="true" selection-end-column="12" />
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/student.ts">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/db/db-pool.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dto/studentAssigment-dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dto/assigment-dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/assigment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/assigment-bo-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1241">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/studentAssigment-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/course_materials.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/course_materials-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-987">
+          <caret line="21" column="108" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/business/course_materials-bo-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1059">
+          <caret line="141" column="20" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dto/course_materials-dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/course_materials-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" column="36" lean-forward="true" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/courseOutline-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1413">
+          <caret line="88" column="110" selection-start-line="88" selection-start-column="110" selection-end-line="88" selection-end-column="110" />
+          <folding>
+            <element signature="n#Promise#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/lectures.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/new_course-dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/assigment-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/new_course.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/new_course-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/student-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="88" column="49" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+          <folding>
+            <element signature="n#Promise#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/lecture-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/assigment-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="101" column="11" lean-forward="true" selection-start-line="91" selection-start-column="8" selection-end-line="101" selection-end-column="11" />
+          <folding>
+            <element signature="n#Promise#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/entity/studentAssigment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dao/custom/impl/studentAssigment-dao-impl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="88" column="204" selection-start-line="88" selection-start-column="204" selection-end-line="88" selection-end-column="204" />
+          <folding>
+            <element signature="n#Promise#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/lectures.sql">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/course_materials.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/new_course.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/studentassigment.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/courseoutline.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/student.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Back-End/app/src/dispatcher/main-dispatcher.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e0b83d06-95c4-402b-b01a-7f3566c5bb4a/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://e0b83d06-95c4-402b-b01a-7f3566c5bb4a/schema/itpm/table/assigment.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="1" selection-end-line="8" selection-end-column="2" />
         </state>
       </provider>
     </entry>

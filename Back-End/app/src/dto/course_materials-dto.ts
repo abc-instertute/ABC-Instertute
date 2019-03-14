@@ -1,10 +1,8 @@
-export class Course_materials {
+export class Course_materialsDto {
     constructor(
         public week:string,
-        public lecture:string,
-        public homework:string,
-        public tute:string,
-        public assigment:string,
-        public references:string
+        public cid:string,
+        public name:string,
+        public file_upload:string
     ){}
 } 

@@ -1,4 +1,4 @@
-export class Student{
+export class StudentDto{
     constructor(
         public sid:string,
         public fname:string,

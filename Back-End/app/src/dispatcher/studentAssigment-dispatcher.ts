@@ -1,15 +1,15 @@
 import express = require("express");
-import {AssigmentBoImpl} from "../business/assigment-bo-impl";
+import {StudentAssigmentBoImpl} from "../business/studentAssigment-bo-impl";
 import {error} from "util";
 import cors = require("cors");
 
 
-const assigmentDispatcher = express.Router();
+const studentAssigmentDispatcher = express.Router();
 
-assigmentDispatcher.route("")
+studentAssigmentDispatcher.route("")
     .get((req, res) => {
 
-        const promise = new AssigmentBoImpl().findAllAssigment();
+        const promise = new StudentAssigmentBoImpl().findAllAssigment();
         promise.then(assigment=>{
             res.status(200).json(assigment);
         }).catch(error=>{
@@ -19,11 +19,11 @@ assigmentDispatcher.route("")
     })
     .post((req, res) => {
 
-        if (!("systemDate" in req.body && "sid" in req.body && "sname" in req.body && "cid" in req.body && "file_upload" in req.body)){
+        if (!("aid" in req.body  && "systemDate" in req.body && "sid" in req.body && "sname" in req.body && "cid" in req.body && "file_upload" in req.body)){
             res.status(400).send("Invalid Request Body");
             return;
         }
-        const promise = new AssigmentBoImpl().saveAssigment(req.body);
+        const promise = new StudentAssigmentBoImpl().saveAssigment(req.body);
         promise.then(status => res.status(201).json(status))
             .catch(err=>res.status(500).send(err));
 
@@ -32,7 +32,7 @@ assigmentDispatcher.route("")
         exposedHeaders:['X-Count']
     })),(req, res) => {
         const t1= new Date().valueOf();// time stamp
-        const promise = new AssigmentBoImpl().AssigmentCount();
+        const promise = new StudentAssigmentBoImpl().AssigmentCount();
         promise.then(count=>{
             res.append("X-Count",count+"");
             res.sendStatus(200);
@@ -43,10 +43,10 @@ assigmentDispatcher.route("")
 ;
 
 
-assigmentDispatcher.route("/:id")
+studentAssigmentDispatcher.route("/:id")
     .get((req, res) => {
 
-        const promise = new AssigmentBoImpl().findAssigment(req.params.id);
+        const promise = new StudentAssigmentBoImpl().findAssigment(req.params.id);
         promise.then(assigement=>{
 
             if (assigement.length > 0){
@@ -62,7 +62,7 @@ assigmentDispatcher.route("/:id")
     })
     .delete((req, res) => {
 
-        const promise = new AssigmentBoImpl().deleteAssigment(req.params.id);
+        const promise = new StudentAssigmentBoImpl().deleteAssigment(req.params.id);
         promise.then(status=>{
 
             if (status){
@@ -78,17 +78,17 @@ assigmentDispatcher.route("/:id")
     })
     .put((req, res) => {
 
-        if (!("systemDate" in req.body && "sid" in req.body && "sname" in req.body && "cid" in req.body && "file_upload" in req.body)){
+        if (!("aid" in req.body  && "systemDate" in req.body && "sid" in req.body && "sname" in req.body && "cid" in req.body && "file_upload" in req.body)){
             res.status(400).send("Invalid Request Body");
             return;
         }
 
         if (req.body.id !== req.params.id){
-            res.status(400).send("Mismatched Customer ID");
+            res.status(400).send("Mismatched assigment ID");
             return;
         }
 
-        const promise = new AssigmentBoImpl().updateAssigment(req.body);
+        const promise = new StudentAssigmentBoImpl().updateAssigment(req.body);
         promise.then(status=>{
 
             if (status){
@@ -103,4 +103,4 @@ assigmentDispatcher.route("/:id")
 
     });
 
-export default assigmentDispatcher;
+export default studentAssigmentDispatcher;

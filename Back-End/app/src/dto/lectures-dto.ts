@@ -1,4 +1,4 @@
-export class Lectures {
+export class LecturesDto {
     constructor(
         public aid:string,
         public fname:string,

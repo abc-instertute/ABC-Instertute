@@ -1,10 +1,10 @@
-export class New_course{
+export class New_courseDto{
     constructor(
         public file_upload:string,
         public id:string,
         public name:string,
         public free:string,
-        public seat:string,
+        public seat:number,
         public schedule:string,
         public period:string,
         public description:string,

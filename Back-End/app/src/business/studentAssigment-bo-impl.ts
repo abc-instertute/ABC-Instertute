@@ -1,18 +1,18 @@
-import {AssigmentDto} from "../dto/assigment-dto";
+import {StudentAssigmentDto} from "../dto/studentAssigment-dto";
 import {pool} from "../db/db-pool";
 import {DAOTypes, getDAO} from "../dao/dao-factore";
-import {AssigmentDAO} from "../dao/custom/assigment-dao";
+import {StudentAssigmentDao} from "../dao/custom/studentAssigment-dao";
 import Promise = require("promise");
 
-export class AssigmentBoImpl {
+export class StudentAssigmentBoImpl {
 
-    findAllAssigment():Promise<Array<AssigmentDto>>{
+    findAllAssigment():Promise<Array<StudentAssigmentDto>>{
         return new Promise((resolve, reject) => {
             pool.getConnection((err, connection) => {
                 if (err) {
                     reject(err);
                 }else{
-                    const assigmentDAO = <AssigmentDAO> getDAO(DAOTypes.ASSIGMENT, connection);
+                    const assigmentDAO = <StudentAssigmentDao> getDAO(DAOTypes.STUDENT_ASSIGMENT, connection);
 
                     const promise = assigmentDAO.findAll();
                     promise.then(assigment => {
@@ -27,7 +27,7 @@ export class AssigmentBoImpl {
         });
     }
 
-    findAssigment(id: string): Promise<Array<AssigmentDto>>{
+    findAssigment(id: string): Promise<Array<StudentAssigmentDto>>{
         return new Promise((resolve, reject) => {
 
             pool.getConnection((err, connection) => {
@@ -36,7 +36,7 @@ export class AssigmentBoImpl {
                     reject(err);
                 }else{
 
-                    const assigmentDAO = <AssigmentDAO> getDAO(DAOTypes.ASSIGMENT, connection);
+                    const assigmentDAO = <StudentAssigmentDao> getDAO(DAOTypes.STUDENT_ASSIGMENT, connection);
 
                     const promise = assigmentDAO.find(id);
                     promise.then(assigment => {
@@ -55,7 +55,7 @@ export class AssigmentBoImpl {
         });
     }
 
-    saveAssigment(assigment: AssigmentDto): Promise<boolean>{
+    saveAssigment(assigment: StudentAssigmentDto): Promise<boolean>{
         return new Promise((resolve, reject) => {
 
             pool.getConnection((err, connection) => {
@@ -64,7 +64,7 @@ export class AssigmentBoImpl {
                     reject(err);
                 }else{
 
-                    const assigmentDAO = <AssigmentDAO> getDAO(DAOTypes.ASSIGMENT, connection);
+                    const assigmentDAO = <StudentAssigmentDao> getDAO(DAOTypes.STUDENT_ASSIGMENT, connection);
 
                     const promise = assigmentDAO.save(assigment);
                     promise.then(result => {
@@ -83,7 +83,7 @@ export class AssigmentBoImpl {
         });
     }
 
-    updateAssigment(assigment: AssigmentDto): Promise<boolean>{
+    updateAssigment(assigment: StudentAssigmentDto): Promise<boolean>{
         return new Promise((resolve, reject) => {
 
             pool.getConnection((err, connection) => {
@@ -92,7 +92,7 @@ export class AssigmentBoImpl {
                     reject(err);
                 }else{
 
-                    const customerDAO = <AssigmentDAO> getDAO(DAOTypes.ASSIGMENT, connection);
+                    const customerDAO = <StudentAssigmentDao> getDAO(DAOTypes.STUDENT_ASSIGMENT, connection);
 
                     const promise = customerDAO.update(assigment);
                     promise.then(result => {
@@ -120,7 +120,7 @@ export class AssigmentBoImpl {
                     reject(err);
                 }else{
 
-                    const assigmentDAO = <AssigmentDAO> getDAO(DAOTypes.ASSIGMENT, connection);
+                    const assigmentDAO = <StudentAssigmentDao> getDAO(DAOTypes.STUDENT_ASSIGMENT, connection);
 
                     const promise = assigmentDAO.delete(id);
                     promise.then(result => {
@@ -145,7 +145,7 @@ export class AssigmentBoImpl {
                 if(err){
                     reject(err)
                 }else {
-                    const assigmentDAO=<AssigmentDAO> getDAO(DAOTypes.ASSIGMENT, connection);
+                    const assigmentDAO=<StudentAssigmentDao> getDAO(DAOTypes.STUDENT_ASSIGMENT, connection);
                     const promise= assigmentDAO.count();
                     promise.then(count =>{
                         resolve(count);

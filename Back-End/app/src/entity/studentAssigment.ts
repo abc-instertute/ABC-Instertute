@@ -1,5 +1,6 @@
-export class Assigment {
+export class StudentAssigment {
     constructor(
+        public aid:string,
         public systemDate:string,
         public sid:string,
         public sname:string,

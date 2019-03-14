@@ -4,7 +4,7 @@ export class New_course{
         public id:string,
         public name:string,
         public free:string,
-        public seat:string,
+        public seat:number,
         public schedule:string,
         public period:string,
         public description:string,
