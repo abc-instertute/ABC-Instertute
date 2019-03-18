@@ -31,8 +31,12 @@
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="TypeScriptCompiler">
+    <option name="showAllErrors" value="true" />
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Back-End" vcs="Git" />
   </component>
   <component name="dataSourceStorageLocal">
     <data-source name="Itpm@localhost" uuid="e0b83d06-95c4-402b-b01a-7f3566c5bb4a">

@@ -60,7 +60,7 @@ var StudentAssigmentDAOImpl = /** @class */ (function () {
     StudentAssigmentDAOImpl.prototype.save = function (entity) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("INSERT INTO studentassigment VALUES ('" + entity.aid + "','" + entity.systemDate + "','" + entity.sid + "','" + entity.sname + "','" + entity.cid + "',,'" + entity.file_upload + "')", function (err, results) {
+            _this.connection.query("INSERT INTO studentassigment VALUES ('" + entity.aid + "','" + entity.systemDate + "','" + entity.sid + "','" + entity.sname + "','" + entity.cid + "','" + entity.file_upload + "')", function (err, results) {
                 if (err) {
                     reject(err);
                 }

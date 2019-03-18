@@ -71,7 +71,7 @@ export class StudentAssigmentDAOImpl implements StudentAssigmentDao {
     save(entity: StudentAssigment): Promise<boolean> {
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`INSERT INTO studentassigment VALUES ('${entity.aid}','${entity.systemDate}','${entity.sid}','${entity.sname}','${entity.cid}',,'${entity.file_upload}')`,
+            this.connection.query(`INSERT INTO studentassigment VALUES ('${entity.aid}','${entity.systemDate}','${entity.sid}','${entity.sname}','${entity.cid}','${entity.file_upload}')`,
                 (err, results) => {
 
                     if (err) {

@@ -65,7 +65,7 @@ export class New_courseBoImpl {
                 }else{
 
                     const assigmentDAO = <New_courseDao> getDAO(DAOTypes.COURSE, connection);
-
+                    console.log(assigment);
                     const promise = assigmentDAO.save(assigment);
                     promise.then(result => {
                         resolve(result);

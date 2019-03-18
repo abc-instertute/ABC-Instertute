@@ -8,7 +8,7 @@ export class New_course{
         public schedule:string,
         public period:string,
         public description:string,
-        public  outcome:string,
-        public  audience:string
+        public outcome:string,
+        public audience:string
     ){}
 }

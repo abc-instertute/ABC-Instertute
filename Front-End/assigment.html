@@ -112,7 +112,7 @@
         <!-- general form elements -->
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="box-title">StudentAssigmentDto</h3>
+            <h3 class="box-title">Student Assigment</h3>
           </div>
           <div class="panel-body">
             <form role="form">
@@ -120,23 +120,28 @@
                 <br>
                 <br>
                 <div class="form-group">
-                  <label class="form-control" name="systemDate" id="lblOrderDate"></label>
+                  <input type="text" class="form-control" name="aid" id="aid" placeholder="Assigment ID"/>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="sid" id="sid" />
+                  <label class="form-control" name="systemDate" id="systemDate" ></label>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="sname" id="sid" />
+                  <input type="text" class="form-control" name="sid" id="sid" placeholder="Student ID"/>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="cid" id="sid" />
+                  <input type="text" class="form-control" name="sname" id="sname" placeholder="Student name" />
                 </div>
                 <div class="form-group">
-                  <input type="file" class="form-control" name="file" id="file-upload" />
+                  <input type="text" class="form-control" name="cid" id="cid" placeholder="Course ID"/>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="file" id="file-upload" placeholder="File name" />
                 </div><br><br>
               </div>
-              <div class="box-footer" style="text-align: left">
-                <button type="reset" class="btn btn-primary" style="width: 100%;">ADD</button>
+              <div class="box-footer" style="text-align: center">
+                <button type="button" id="add"  class="btn btn-primary" style="width: 30%;">ADD</button>
+                <button type="button" class="btn btn-primary" style="width: 30%;">Save</button>
+                <button type="reset" id="btnSave" class="btn btn-primary" style="width: 30%;">Reset</button>
               </div>
             </form>
           </div>
@@ -234,11 +239,12 @@
   <script src="js/waypoints.min.js"></script>
   <script src="js/jquery.nice-select.min.js"></script>
   <script src="js/main.js"></script>
-
+  <script src="//static.filestackapi.com/filestack-js/1.x.x/filestack.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 
   <script>
-
+    var SERVER_URL = "http://localhost:3020";
+    var uplodURL;
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1; //January is 0!
@@ -256,14 +262,24 @@
 
     today = mm + '/' + dd + '/' + yyyy + '   ' + h + '.' + m + '.' + s;
 
-    $("#lblOrderDate").text(today);
-  </script>
-  <script>
+    $("#systemDate").text(today);
+
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-23581568-13');
+
+    $("#add").click(function(e){
+
+      const client = filestack.init('Av81bMuqaSZCfuEcxFj48z');
+      const options = {
+        onUploadDone: (res,url) => console.log(url),
+      };
+      client.picker(options).open();
+
+      console.log(uplodURL);
+    });
   </script>
 </body>
 

@@ -54,6 +54,7 @@ var New_courseBoImpl = /** @class */ (function () {
                 }
                 else {
                     var assigmentDAO = dao_factore_1.getDAO(dao_factore_1.DAOTypes.COURSE, connection);
+                    console.log(assigment);
                     var promise = assigmentDAO.save(assigment);
                     promise.then(function (result) {
                         resolve(result);

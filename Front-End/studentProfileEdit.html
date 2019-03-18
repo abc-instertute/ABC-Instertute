@@ -110,47 +110,60 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 right-contents">
-                        <div class="box-header with-border">
-                            <button type="button" class="btn text-uppercase enroll" id="add" style="width: 300px">Add
-                                A User</button>
-                        </div>
                         <form role="form">
                             <div class="box-body">
+
+                                <div class="form-group" >
+                                    <img src="image.png" id="img-preview" style="width: 200px; height: 125px;" />
+                                    <label class="file-upload-container" for="file-upload">
+                                        <input id="file-upload" type="file" style="display:none;"></br>
+                                        <span>Select an Image</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Student ID </label>
+                                    <input type="text" class="form-control" id="sid">
+                                </div>
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input type="text" class="form-control" id="textSchedule">
+                                    <input type="text" class="form-control" id="fname">
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name </label>
-                                    <input type="text" class="form-control" id="textTimePeriod">
+                                    <input type="text" class="form-control" id="lname">
                                 </div>
                                 <div class="form-group">
                                     <label>Birthday </label>
-                                    <input type="date" class="form-control" id="textFree">
+                                    <input type="date" class="form-control" id="bday">
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <div id="Description" style="border: 1px solid #ced4da; border-radius: 5px;"
+                                    <div id="address" style="border: 1px solid #ced4da; border-radius: 5px;"
                                         class="round2" contenteditable="true"></div>
                                 </div>
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="password" class="form-control" id="textSeet">
+                                    <input type="text" class="form-control" id="phone">
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="password" class="form-control" id="textSeet">
+                                    <input type="text" class="form-control" id="email">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" id="textTimePeriod">
+                                    <input type="text" class="form-control" id="password">
                                 </div>
                                 <div class="form-group">
                                     <label>Comfirm Password</label>
-                                    <input type="text" class="form-control" id="textCourseOutline">    
+                                    <input type="text" class="form-control" id="cpassword">
                                 </div>
+
+                                <div class="box-footer" style="text-align: left">
+                                    <button type="reset" class="btn btn-primary" style="width: 45%;">Reset</button>
+                                    <button type="button" id="btnSave" class="btn btn-primary" style="width: 45%;">ADD</button>
+                                </div>
+
                             </div>
-                            <button type="button" class="btn text-uppercase enroll" id="save">Save</button>
                         </form>
                     </div>
                     <div class="col-md-4 left-contents">
@@ -162,15 +175,15 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label>Current Password</label>
-                                    <input type="password" class="form-control" id="textTimePeriod">
+                                    <input type="text" class="form-control" id="textTimePeriod1">
                                 </div>
                                 <div class="form-group">
                                     <label>New Password</label>
-                                    <input type="password" class="form-control" id="textTimePeriod">
+                                    <input type="text" class="form-control" id="textTimePeriod2">
                                 </div>
                                 <div class="form-group">
                                     <label>Comfirm Password</label>
-                                    <input type="password" class="form-control" id="textTimePeriod">
+                                    <input type="text" class="form-control" id="textTimePeriod3">
                                 </div>
                             </div>
                             <button type="button" class="btn btn-primary" style="width: 100%" id="save1">Change The Password</button>
@@ -179,9 +192,6 @@
                 </div>
             </div>
         </section>
-
-
-
 
     </br>
     <footer class="footer-area section-gap">
@@ -273,14 +283,236 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
+        // API image uploder
+        var SERVER_URL = "http://localhost:3020";
+        var cloud_URL = "https://api.cloudinary.com/v1_1/sewwandi/image/upload";
+        var  cloud_uploder_Key ="ln4ub25f";
+        var uplodURL;
+        $("#file-upload").on("change",function (e) {
+
+            var f =e.target.files[0];
+            var formatData = new FormData();
+            formatData.append('file',f);
+            formatData.append('upload_preset',cloud_uploder_Key);
+            axios({
+                url:cloud_URL,
+                method:"POST",
+                headers :{
+                    'Content-Type':'application/x-www-form-urlencoded'
+                },
+                data:formatData
+            }).then(function (res) {
+                console.log(res);
+                uplodURL = res.data.secure_url;
+                $("#img-preview").attr("src",uplodURL);
+            }).catch(function (err) {
+                console.log(err);
+            });
+
+        });
+        // API image uploder
+        <!--footer-->
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-23581568-13');
+        <!--footer-->
+
+        <!--front end connector the back end using ajax-->
+
+        $("#btnSave").click(function(){
+
+            // if ($("#sid").attr("disabled")){
+            //
+            //     var student = {
+            //         file_upload: uplodURL,
+            //         sid: $("#sid").val(),
+            //         fname: $("#fname").val(),
+            //         lname: $("#lname").val(),
+            //         bday: $("#bday").val(),
+            //         address: $("#address").val(),
+            //         phone: $("#phone").val(),
+            //         email: $("#email").text(),
+            //         password: $("#password").text()
+            //     };
+            //
+            //     var ajaxConfig = {
+            //         method: "PUT",
+            //         url: SERVER_URL + "/api/v1/students" + $("#id").val(),
+            //         async: true,
+            //         contentType: "application/json",
+            //         data: JSON.stringify(assigment)
+            //     }
+            //
+            //     $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
+            //         alert("Updated Successfully");
+            //         loadAllAssigment();
+            //         $('button[type="reset"]').trigger("click");
+            //     }).fail(function(jxhr,statusText,error){
+            //         alert("Unable to update the Course, try again");
+            //         console.log(error);
+            //     });
+            //
+            // }else{
+
+                var student = {
+                    file_upload: uplodURL,
+                    sid: $("#sid").val(),
+                    fname: $("#fname").val(),
+                    lname: $("#lname").val(),
+                    bday: $("#bday").val(),
+                    address: $("#address").text(),
+                    phone: $("#phone").val(),
+                    email: $("#email").val(),
+                    password: $("#password").val()
+                };
+
+                var ajaxConfig = {
+                    method: "POST",
+                    url: SERVER_URL + "/api/v1/students",
+                    async: true,
+                    contentType: "application/json",
+                    data: JSON.stringify(student)
+                }
+
+                $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
+                    alert("Added Successfully");
+                    uplodURL="image.png";
+                    $("#img-preview").attr("src",uplodURL);
+                    loadAllAssigment();
+                    $('button[type="reset"]').trigger("click");
+                }).fail(function(jxhr,statusText,error){
+                    alert("Unable to save the course, try again");
+                    console.log(error);
+                });
+
+
+            // }
+
+        });
+
+        $('button[type="reset"]').click(function(){
+            // $("#myTable tbody tr").removeClass("selected-row");
+            // $("#id").attr("disabled",false);
+            uplodURL="image.png";
+            $("#img-preview").attr("src",uplodURL);
+            $("#address").text("  ");
+        });
+
+        // $(document).ready(function(){
+        //
+        //     loadAllAssigment();
+        //
+        // });
+
+        // function loadAllAssigment(){
+        //     //
+        //     // $("#myTable").dataTable().fnDestroy();
+        //     // $("#myTable tbody tr").remove();
+        //
+        //     var ajaxConfig = {
+        //         method: "GET",
+        //         url:SERVER_URL + "/api/v1/students",
+        //         async: true
+        //     };
+        //
+        //     $.ajax(ajaxConfig).done(function(assigments,statusText,jxhr){
+        //         console.log("cvd");
+        //         console.log(assigments);
+        //         assigments.forEach(function(assigment){
+        //
+        //             var html = `<tr>
+        //                   <td>${assigment.file_upload}</td>
+        //                   <td>${assigment.id}</td>
+        //                   <td>${assigment.name}</td>
+        //                   <td>${assigment.free}</td>
+        //                   <td>${assigment.seat}</td>
+        //                   <td>${assigment.schedule}</td>
+        //                   <td>${assigment.period}</td>
+        //                   <td>${assigment.description}</td>
+        //                   <td>${assigment.outcome}</td>
+        //                   <td>${assigment.audience}</td>
+        //                   <td><button type="button" class="btn btn-success delete">Delete</button></td>
+        //                </tr>`;
+        //
+        //             $("#myTable tbody").append(html);
+        //
+        //             $("#myTable tbody tr").off("click");
+        //             $("#myTable tbody tr").click(function(){
+        //                 $("#myTable tbody tr").removeClass("selected-row");
+        //                 $(this).addClass("selected-row");
+        //                 uplodURL = $(this).find("td:first-child").text();
+        //                 $("#img-preview").attr("src",uplodURL);
+        //                 $("#id").val($(this).find("td:nth-child(2)").text());
+        //                 $("#id").attr("disabled",true);
+        //                 $("#name").val($(this).find("td:nth-child(3)").text());
+        //                 $("#free").val($(this).find("td:nth-child(4)").text());
+        //                 $("#seat").val($(this).find("td:nth-child(5)").text());
+        //                 $("#schedule").val($(this).find("td:nth-child(6)").text());
+        //                 $("#period").val($(this).find("td:nth-child(7)").text());
+        //                 $("#description").text($(this).find("td:nth-child(8)").text());
+        //                 $("#outcome").text($(this).find("td:nth-child(9)").text());
+        //                 $("#audience").text($(this).find("td:nth-child(10)").text());
+        //
+        //
+        //             });
+        //
+        //             $("button.delete").off("click");
+        //             $("button.delete").click(function(eventData){
+        //
+        //                 eventData.stopPropagation();
+        //
+        //                 var row = $(this).parents("tr");
+        //                 var assigmentId = (row.find("td:nth-child(2)").text());
+        //
+        //                 if (confirm("Are you sure to delete this assigment?")){
+        //
+        //                     var ajaxConfig = {
+        //                         method : "DELETE",
+        //                         url: SERVER_URL + "/api/v1/newCourses/" + assigmentId,
+        //                         async: true
+        //                     }
+        //
+        //                     $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
+        //
+        //                         $(row).remove();
+        //
+        //                     }).fail(function(jxhr,statusText,error){
+        //
+        //                         console.log(jxhr.responseText);
+        //
+        //                     });
+        //
+        //                 }
+        //             });
+        //
+        //         });
+        //
+        //         $('#myTable').DataTable({
+        //             'paging'      : true,
+        //             'lengthChange': false,
+        //             'searching'   : true,
+        //             'ordering'    : true,
+        //             'info'        : true,
+        //             'autoWidth'   : true,
+        //             'pageLength'  : 11,
+        //             language: {
+        //                 search: "_INPUT_",
+        //                 searchPlaceholder: "Search Assigment..."
+        //             }
+        //         });
+        //
+        //     }).fail(function(jxhr,statusText,error){
+        //         console.log(error);
+        //     });
+        // }
+
+
+
     </script>
 </body>
 

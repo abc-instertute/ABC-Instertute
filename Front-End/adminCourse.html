@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="css/hexagons.min.css" />
     <link rel="stylesheet" href="../../../../cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -106,93 +109,96 @@
     </section>
 
 
-
-    <section class="course-details-area ">
+    <section class="testimonials-area ">
         <div class="container">
-            <br>
+            <h1 style="text-align: center">
+                Student Assigment
+            </h1>
+            <br><br>
             <div class="row">
-                <div class="col-lg-8 right-contents">
-
-                    <form role="form">
-                        <div class="box-body">
-                            <div class="form-group">
-                                <button type="button" class="btn text-uppercase enroll" id="addCourse"
-                                    style="width: 300px">Add
-                                    Course</button>
-                            </div>
-                            </br>
-                            <div class="form-group" >
-                                <img src="image.png" id="img-preview" style="width: 200px; height: 125px;" />
-                                <label class="file-upload-container" for="file-upload">
-                                    <input id="file-upload" type="file" style="display:none;"></br>
-                                    <span>Select an Image</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="textSchedule" placeholder="Course ID">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="textTimePeriod" placeholder="Course Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="textFree" placeholder="Course Free">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="textSeet" placeholder="Available Seet">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="textSchedule" placeholder="Schedule">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="textTimePeriod" placeholder="Time period">
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="textCourseOutline" placeholder="Course Outline">
+                <div class="col-md-3">
+                    <!-- general form elements -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="box-title">ADD Course</h3>
+                        </div>
+                        <br>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="form-group" >
+                                        <img src="image.png" id="img-preview" style="width: 200px; height: 125px;" />
+                                        <label class="file-upload-container" for="file-upload">
+                                            <input id="file-upload" type="file" style="display:none;"></br>
+                                            <span>Select an Image</span>
+                                        </label>
                                     </div>
-                                    <div class="col-lg-1">
-                                        <button type="button" class="btn btn-primary" style="margin-left:40px ;"
-                                            id="btnSave">ADD</button>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id" placeholder="Course ID">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Course Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="free" placeholder="Course Free">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="seat" placeholder="Available Seet">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="schedule" placeholder="Schedule">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="period" placeholder="Time period">
+                                    </div>
+                                    <div class="form-group">Description
+                                        <div id="description" style="border: 1px solid #ced4da; border-radius: 5px;"
+                                             class="round2" contenteditable="true" ></div>
+                                    </div>
+                                    <div class="form-group">Course out come
+                                        <div id="outcome" contenteditable="true" class="round2" style="border: 1px solid #ced4da; border-radius: 5px;" ></div>
+                                    </div>
+                                    <div class="form-group">Target Audience
+                                        <div id="audience" class="round2" contenteditable="true"
+                                             style="border: 1px solid #ced4da; border-radius: 5px;" >
+                                        </div>
+                                    </div>
+                                    <div class="box-footer" style="text-align: left">
+                                        <button type="reset" class="btn btn-primary" style="width: 45%;">Reset</button>
+                                        <button type="button" id="btnSave" class="btn btn-primary" style="width: 45%;">ADD</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">Description
-                                <div id="Description" style="border: 1px solid #ced4da; border-radius: 5px;"
-                                    class="round2" contenteditable="true" ></div>
-                            </div>
-                            <div class="form-group">Course out come
-                                <div id="outCome" contenteditable="true" class="round2"
-                                    style="border: 1px solid #ced4da; border-radius: 5px;" ></div>
-                            </div>
-                            <div class="form-group">Target Audience
-                                <div id="targetAudience" class="round2" contenteditable="true"
-                                    style="border: 1px solid #ced4da; border-radius: 5px;" ></div>
-                            </div>
-
+                            </form>
                         </div>
-                        <button type="button" class="btn text-uppercase enroll" id="save">Save</button>
-                    </form>
+                    </div>
                 </div>
-                <div class="col-md-4 left-contents">
-                    <br>
-                    <h2 style="margin-bottom: 10px;">Course Outline</h2><br><br>
-                    <div class="box">
-                        <div class="box-body">
-                            <table id="tblItems" class="table table-bordered table-hover">
+                <div class="col-md-9">
+                    <!-- general form elements -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="box-title">Course Detail</h3>
+                        </div>
+                        <br>
+                        <div class="panel-body" style="overflow-y: auto; height: 715px;">
+                            <table id="myTable" class="table table-hover ">
                                 <thead>
                                     <tr>
-                                        <th>Course Outline</th>
+                                        <th>Image</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Free</th>
+                                        <th>Seat</th>
+                                        <th>Schedule</th>
+                                        <th>Period</th>
+                                        <th>Description</th>
+                                        <th>Outcome</th>
+                                        <th>Audience</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Course Outline</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -200,6 +206,8 @@
             </div>
         </div>
     </section>
+
+
 
     </br>
     <footer class="footer-area section-gap">
@@ -293,14 +301,243 @@
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/public/scripts/app.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
     <script>
+
+        // API image uploder
+        var SERVER_URL = "http://localhost:3020";
+        var cloud_URL = "https://api.cloudinary.com/v1_1/sewwandi/image/upload";
+        var  cloud_uploder_Key ="ln4ub25f";
+        var uplodURL;
+        $("#file-upload").on("change",function (e) {
+
+            var f =e.target.files[0];
+            var formatData = new FormData();
+            formatData.append('file',f);
+            formatData.append('upload_preset',cloud_uploder_Key);
+            axios({
+                url:cloud_URL,
+                method:"POST",
+                headers :{
+                    'Content-Type':'application/x-www-form-urlencoded'
+                },
+                data:formatData
+            }).then(function (res) {
+                console.log(res);
+                uplodURL = res.data.secure_url;
+                $("#img-preview").attr("src",uplodURL);
+            }).catch(function (err) {
+                console.log(err);
+            });
+
+        });
+        // API image uploder
+        <!--footer-->
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-23581568-13');
+        <!--footer-->
+
+        <!--front end connector the back end using ajax-->
+
+        $("#btnSave").click(function(){
+
+            if ($("#aid").attr("disabled")){
+
+                var assigment = {
+                    file_upload: uplodURL,
+                    id: $("#id").val(),
+                    name: $("#name").val(),
+                    free: $("#free").val(),
+                    seat: $("#seat").val(),
+                    schedule: $("#schedule").val(),
+                    period: $("#period").val(),
+                    description: $("#description").text(),
+                    outcome: $("#outcome").text(),
+                    audience: $("#audience").text()
+                };
+
+                var ajaxConfig = {
+                    method: "PUT",
+                    url: SERVER_URL + "/api/v1/newCourses/" + $("#id").val(),
+                    async: true,
+                    contentType: "application/json",
+                    data: JSON.stringify(assigment)
+                }
+
+                $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
+                    alert("Updated Successfully");
+                    loadAllAssigment();
+                    $('button[type="reset"]').trigger("click");
+                }).fail(function(jxhr,statusText,error){
+                    alert("Unable to update the Course, try again");
+                    console.log(error);
+                });
+
+            }else{
+
+                var assigment = {
+                    file_upload: uplodURL,
+                    id: $("#id").val(),
+                    name: $("#name").val(),
+                    free: $("#free").val(),
+                    seat: $("#seat").val(),
+                    schedule: $("#schedule").val(),
+                    period: $("#period").val(),
+                    description: $("#description").text(),
+                    outcome: $("#outcome").text(),
+                    audience: $("#audience").text()
+                };
+
+                var ajaxConfig = {
+                    method: "POST",
+                    url: SERVER_URL + "/api/v1/newCourses/",
+                    async: true,
+                    contentType: "application/json",
+                    data: JSON.stringify(assigment)
+                }
+
+                $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
+                    alert("Added Successfully");
+                    uplodURL="image.png";
+                    $("#img-preview").attr("src",uplodURL);
+                    loadAllAssigment();
+                    $('button[type="reset"]').trigger("click");
+                }).fail(function(jxhr,statusText,error){
+                    alert("Unable to save the course, try again");
+                    console.log(error);
+                });
+
+
+            }
+
+        });
+
+        $('button[type="reset"]').click(function(){
+            $("#myTable tbody tr").removeClass("selected-row");
+            $("#id").attr("disabled",false);
+            uplodURL="image.png";
+            $("#img-preview").attr("src",uplodURL);
+            $("#description").text("  ");
+            $("#outcome").text("  ");
+            $("#audience").text("  ");
+        });
+
+        $(document).ready(function(){
+
+            loadAllAssigment();
+
+        });
+
+        function loadAllAssigment(){
+
+            $("#myTable").dataTable().fnDestroy();
+            $("#myTable tbody tr").remove();
+
+            var ajaxConfig = {
+                method: "GET",
+                url:SERVER_URL + "/api/v1/newCourses",
+                async: true
+            };
+
+            $.ajax(ajaxConfig).done(function(assigments,statusText,jxhr){
+                console.log("cvd");
+                console.log(assigments);
+                assigments.forEach(function(assigment){
+
+                    var html = `<tr>
+                          <td>${assigment.file_upload}</td>
+                          <td>${assigment.id}</td>
+                          <td>${assigment.name}</td>
+                          <td>${assigment.free}</td>
+                          <td>${assigment.seat}</td>
+                          <td>${assigment.schedule}</td>
+                          <td>${assigment.period}</td>
+                          <td>${assigment.description}</td>
+                          <td>${assigment.outcome}</td>
+                          <td>${assigment.audience}</td>
+                          <td><button type="button" class="btn btn-success delete">Delete</button></td>
+                       </tr>`;
+
+                    $("#myTable tbody").append(html);
+
+                    $("#myTable tbody tr").off("click");
+                    $("#myTable tbody tr").click(function(){
+                        $("#myTable tbody tr").removeClass("selected-row");
+                        $(this).addClass("selected-row");
+                        uplodURL = $(this).find("td:first-child").text();
+                        $("#img-preview").attr("src",uplodURL);
+                        $("#id").val($(this).find("td:nth-child(2)").text());
+                        $("#id").attr("disabled",true);
+                        $("#name").val($(this).find("td:nth-child(3)").text());
+                        $("#free").val($(this).find("td:nth-child(4)").text());
+                        $("#seat").val($(this).find("td:nth-child(5)").text());
+                        $("#schedule").val($(this).find("td:nth-child(6)").text());
+                        $("#period").val($(this).find("td:nth-child(7)").text());
+                        $("#description").text($(this).find("td:nth-child(8)").text());
+                        $("#outcome").text($(this).find("td:nth-child(9)").text());
+                        $("#audience").text($(this).find("td:nth-child(10)").text());
+
+
+                    });
+
+                    $("button.delete").off("click");
+                    $("button.delete").click(function(eventData){
+
+                        eventData.stopPropagation();
+
+                        var row = $(this).parents("tr");
+                        var assigmentId = (row.find("td:nth-child(2)").text());
+
+                        if (confirm("Are you sure to delete this assigment?")){
+
+                            var ajaxConfig = {
+                                method : "DELETE",
+                                url: SERVER_URL + "/api/v1/newCourses/" + assigmentId,
+                                async: true
+                            }
+
+                            $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
+
+                                $(row).remove();
+
+                            }).fail(function(jxhr,statusText,error){
+
+                                console.log(jxhr.responseText);
+
+                            });
+
+                        }
+                    });
+
+                });
+
+                $('#myTable').DataTable({
+                    'paging'      : true,
+                    'lengthChange': false,
+                    'searching'   : true,
+                    'ordering'    : true,
+                    'info'        : true,
+                    'autoWidth'   : true,
+                    'pageLength'  : 11,
+                    language: {
+                        search: "_INPUT_",
+                        searchPlaceholder: "Search Assigment..."
+                    }
+                });
+
+            }).fail(function(jxhr,statusText,error){
+                console.log(error);
+            });
+        }
+
+        <!--front end connector the back end using ajax-->
     </script>
+
 </body>
 
 <!-- Mirrored from colorlib.com/preview/theme/eclipse/course-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Feb 2019 15:42:42 GMT -->
