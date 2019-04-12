@@ -5,8 +5,9 @@ import {StudentAssigmentDAOImpl}from "./custom/impl/studentAssigment-dao-impl";
 import {Course_materialDAOImpl}from "./custom/impl/course_materials-dao-impl";
 import {LectureDAOImpl}from "./custom/impl/lecture-dao-impl";
 import {StudentDAOImpl}from "./custom/impl/student-dao-impl";
+import {CourseRegistrationDAOImpl}from "./custom/impl/courseRegistration-dao-impl";
 export enum DAOTypes {
-    COURSE, COURSE_MATERIAL, ASSIGMENT, LECTURE, STUDENT, STUDENT_ASSIGMENT
+    COURSE, COURSE_MATERIAL, ASSIGMENT, LECTURE, STUDENT, STUDENT_ASSIGMENT, COURSE_REGISTRATION
 }
 export function getDAO(daoType: DAOTypes, connection:PoolConnection) {
 
@@ -23,6 +24,8 @@ export function getDAO(daoType: DAOTypes, connection:PoolConnection) {
             return new StudentDAOImpl(connection);
         case  DAOTypes.STUDENT_ASSIGMENT:
             return new StudentAssigmentDAOImpl(connection);
+        case DAOTypes.COURSE_REGISTRATION:
+            return new CourseRegistrationDAOImpl(connection);
         default:
             return null;
     }

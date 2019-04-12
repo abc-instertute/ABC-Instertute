@@ -2,7 +2,7 @@ import {AssigmentDto} from "../dto/assigment-dto";
 import {pool} from "../db/db-pool";
 import {DAOTypes, getDAO} from "../dao/dao-factore";
 import {AssigmentDao} from "../dao/custom/assigment-dao";
-
+import Promise = require("promise");
 export class AssigmentBoImpl {
 
     findAllAssigment():Promise<Array<AssigmentDto>>{

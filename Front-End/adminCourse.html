@@ -36,6 +36,78 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+
+        #hs{
+            position: relative;
+            animation-name: walkingMan;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes walkingMan{
+            0%{
+                color: aqua;
+            }
+
+            20%{
+                color: red;
+            }
+
+            40%{
+                color: blue;
+            }
+
+            60%{
+                color: yellow;
+            }
+            80%{
+                color: blueviolet;
+            }
+
+            100%{
+                color: brown;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('img/search.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.header, #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -43,14 +115,12 @@
     <header class="default-header">
         <nav class="navbar navbar-expand-lg  navbar-light">
             <div class="container">
-                <h3 style="color:white">ABC Instertute</h3>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <h3 id="hs" style="color:white">ABC Institute</h3>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="lnr lnr-menu"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end align-items-center"
-                    id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li><a href="index-2.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
@@ -95,31 +165,20 @@
         </div>
     </header>
 
-
-    <section class="banner-area area1">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-12 banner-right">
-                    <h1 class="text-white">
-                        Course Details
-                    </h1>
-                </div>
-            </div>
-        </div>
+    <section style="height: 100px; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">
     </section>
-
-
+    <br><br>
     <section class="testimonials-area ">
         <div class="container">
             <h1 style="text-align: center">
-                Student Assigment
+                Course Detail
             </h1>
             <br><br>
             <div class="row">
                 <div class="col-md-3">
                     <!-- general form elements -->
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">
                             <h3 class="box-title">ADD Course</h3>
                         </div>
                         <br>
@@ -164,8 +223,8 @@
                                         </div>
                                     </div>
                                     <div class="box-footer" style="text-align: left">
-                                        <button type="reset" class="btn btn-primary" style="width: 45%;">Reset</button>
-                                        <button type="button" id="btnSave" class="btn btn-primary" style="width: 45%;">ADD</button>
+                                        <button type="reset" class="btn " style="width: 45%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);"><p style="color:white">Reset</p></button>
+                                        <button type="button" id="btnSave" class="btn btn-primary" style="width: 45%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);"><p style="color:white">ADD</p></button>
                                     </div>
                                 </div>
                             </form>
@@ -175,7 +234,7 @@
                 <div class="col-md-9">
                     <!-- general form elements -->
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">
                             <h3 class="box-title">Course Detail</h3>
                         </div>
                         <br>
@@ -207,10 +266,8 @@
         </div>
     </section>
 
-
-
     </br>
-    <footer class="footer-area section-gap">
+    <footer class="section-gap" style="height: 350px; background: linear-gradient(to bottom, #030a1d 88%, #6600cc 126%)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-6 single-footer-widget box">
@@ -251,8 +308,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 single-footer-widget box">
                     <ul>
-                        <li style="text-align: center"><img src="education.gif" alt="Smiley face" height="100"
-                                width="100"></li>
+                        <li style="text-align: center"><img src="education.gif" alt="Smiley face" height="100" width="100"></li>
                         <li style="text-align: center">
                             <h3 style="color:white">ABC Instertute</h3>
                         </li>
@@ -268,9 +324,8 @@
                     Copyright &copy;
                     <script>document.write(new Date().getFullYear());</script> All rights reserved | This is a ITPM
                     Project. Creat
-                    <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/"
-                        target="_blank">by
-                        WE_19_15 Group</a>
+                    <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">by
+                    WE_19_15 Group</a>
                 </p>
                 <div class="col-lg-4 col-md-12 footer-social">
                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -448,9 +503,9 @@
                 console.log("cvd");
                 console.log(assigments);
                 assigments.forEach(function(assigment){
-
+                    // $("#image").attr("src",assigment.file_upload);
                     var html = `<tr>
-                          <td>${assigment.file_upload}</td>
+                          <td><img id="image" src="${assigment.file_upload}" style="width: 50px; height: 50px;" /></td>
                           <td>${assigment.id}</td>
                           <td>${assigment.name}</td>
                           <td>${assigment.free}</td>
@@ -460,7 +515,7 @@
                           <td>${assigment.description}</td>
                           <td>${assigment.outcome}</td>
                           <td>${assigment.audience}</td>
-                          <td><button type="button" class="btn btn-success delete">Delete</button></td>
+                          <td><button type="button" class="btn delete" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);"><p style="color:white">Delete</p></button></td>
                        </tr>`;
 
                     $("#myTable tbody").append(html);
@@ -469,7 +524,7 @@
                     $("#myTable tbody tr").click(function(){
                         $("#myTable tbody tr").removeClass("selected-row");
                         $(this).addClass("selected-row");
-                        uplodURL = $(this).find("td:first-child").text();
+                        uplodURL = $(this).find("#image").attr('src');
                         $("#img-preview").attr("src",uplodURL);
                         $("#id").val($(this).find("td:nth-child(2)").text());
                         $("#id").attr("disabled",true);
@@ -534,6 +589,13 @@
                 console.log(error);
             });
         }
+
+        $("body").mousemove(function(eventData){
+
+            $("#hs").text(v);
+            $("#hs").css("left",eventData.clientX+10+px);
+            $("#hs").css("top",eventData.clientY+10+px);
+        });
 
         <!--front end connector the back end using ajax-->
     </script>

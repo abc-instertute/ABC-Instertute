@@ -42,9 +42,6 @@
   <header class="default-header">
     <nav class="navbar navbar-expand-lg  navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="index-2.html">
-          <img src="img/logo.png" alt="" />
-        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="lnr lnr-menu"></span>
@@ -110,8 +107,8 @@
       <!-- column -->
       <div class="col-md-12">
         <!-- general form elements -->
-        <div class="panel panel-primary">
-          <div class="panel-heading">
+        <div class="panel panel-default">
+          <div class="panel-heading text-white" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">
             <h3 class="box-title">Student Assigment</h3>
           </div>
           <div class="panel-body">
@@ -136,12 +133,16 @@
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" name="file" id="file-upload" placeholder="File name" />
-                </div><br><br>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="dox" id="dox" placeholder="Uploader Link " />
+                </div>
+                <br><br>
               </div>
               <div class="box-footer" style="text-align: center">
-                <button type="button" id="add"  class="btn btn-primary" style="width: 30%;">ADD</button>
-                <button type="button" class="btn btn-primary" style="width: 30%;">Save</button>
-                <button type="reset" id="btnSave" class="btn btn-primary" style="width: 30%;">Reset</button>
+                <button type="button" id="add"  class="btn text-white" style="width: 30%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">ADD</button>
+                <button type="button" class="btn text-white" style="width: 30%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">Save</button>
+                <button type="reset" id="btnSave" class="btn text-white" style="width: 30%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">Reset</button>
               </div>
             </form>
           </div>
@@ -269,16 +270,36 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-23581568-13');
-
+    var y
     $("#add").click(function(e){
 
-      const client = filestack.init('Av81bMuqaSZCfuEcxFj48z');
+      const client = filestack.init('AZoHkvnO2TZmijMybDGvvz');
       const options = {
-        onUploadDone: (res,url) => console.log(url),
-      };
-      client.picker(options).open();
+          onUploadDone:onUploadDone
 
-      console.log(uplodURL);
+      };
+
+        function onUploadDone(res) {
+            x= res;
+
+            for(var property in res){
+                y = res[property];
+
+                for(var property1 in y) {
+
+                    $("#dox").val(y[property1].url);
+                    $("#file-upload").val(y[property1].filename);
+                }
+
+            }
+
+            return console.log(x);
+        }
+
+        client.picker(options).open();
+
+
+
     });
   </script>
 </body>

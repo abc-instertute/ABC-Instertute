@@ -1,4 +1,5 @@
 export class Assigment {
+
     constructor(
         public aid:string,
         public cid:string,

@@ -49,7 +49,7 @@ assigmentDispatcher.route("/:id")
     });
 })
     .delete(function (req, res) {
-    var promise = new assigment_bo_impl_1.AssigmentBoImpl().deleteAssigment(req.params.id);
+    var promise = new assigment_bo_impl_1.AssigmentBoImpl().deleteAssigment(req.params.aid);
     promise.then(function (status) {
         if (status) {
             res.status(200).send(true);
@@ -66,7 +66,7 @@ assigmentDispatcher.route("/:id")
         res.status(400).send("Invalid Request Body");
         return;
     }
-    if (req.body.id !== req.params.id) {
+    if (req.body.aid !== req.params.aid) {
         res.status(400).send("Mismatched assigment ID");
         return;
     }

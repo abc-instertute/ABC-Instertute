@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var db_pool_1 = require("../db/db-pool");
 var dao_factore_1 = require("../dao/dao-factore");
+var Promise = require("promise");
 var AssigmentBoImpl = /** @class */ (function () {
     function AssigmentBoImpl() {
     }

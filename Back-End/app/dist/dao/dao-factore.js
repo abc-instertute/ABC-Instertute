@@ -6,6 +6,7 @@ var studentAssigment_dao_impl_1 = require("./custom/impl/studentAssigment-dao-im
 var course_materials_dao_impl_1 = require("./custom/impl/course_materials-dao-impl");
 var lecture_dao_impl_1 = require("./custom/impl/lecture-dao-impl");
 var student_dao_impl_1 = require("./custom/impl/student-dao-impl");
+var courseRegistration_dao_impl_1 = require("./custom/impl/courseRegistration-dao-impl");
 var DAOTypes;
 (function (DAOTypes) {
     DAOTypes[DAOTypes["COURSE"] = 0] = "COURSE";
@@ -14,6 +15,7 @@ var DAOTypes;
     DAOTypes[DAOTypes["LECTURE"] = 3] = "LECTURE";
     DAOTypes[DAOTypes["STUDENT"] = 4] = "STUDENT";
     DAOTypes[DAOTypes["STUDENT_ASSIGMENT"] = 5] = "STUDENT_ASSIGMENT";
+    DAOTypes[DAOTypes["COURSE_REGISTRATION"] = 6] = "COURSE_REGISTRATION";
 })(DAOTypes = exports.DAOTypes || (exports.DAOTypes = {}));
 function getDAO(daoType, connection) {
     switch (daoType) {
@@ -29,6 +31,8 @@ function getDAO(daoType, connection) {
             return new student_dao_impl_1.StudentDAOImpl(connection);
         case DAOTypes.STUDENT_ASSIGMENT:
             return new studentAssigment_dao_impl_1.StudentAssigmentDAOImpl(connection);
+        case DAOTypes.COURSE_REGISTRATION:
+            return new courseRegistration_dao_impl_1.CourseRegistrationDAOImpl(connection);
         default:
             return null;
     }

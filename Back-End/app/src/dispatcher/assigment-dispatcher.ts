@@ -62,7 +62,7 @@ assigmentDispatcher.route("/:id")
     })
     .delete((req, res) => {
 
-        const promise = new AssigmentBoImpl().deleteAssigment(req.params.id);
+        const promise = new AssigmentBoImpl().deleteAssigment(req.params.aid);
         promise.then(status=>{
 
             if (status){
@@ -83,7 +83,7 @@ assigmentDispatcher.route("/:id")
             return;
         }
 
-        if (req.body.id !== req.params.id){
+        if (req.body.aid !== req.params.aid){
             res.status(400).send("Mismatched assigment ID");
             return;
         }
