@@ -157,5 +157,33 @@ export class CourseRegistrationBoImpl {
         });
     }
 
+    unEnrolCourseRegistration(id: string): Promise<boolean>{
+        return new Promise((resolve, reject) => {
+
+            pool.getConnection((err, connection) => {
+
+                if (err){
+                    reject(err);
+                }else{
+
+                    const assigmentDAO = <CourseRegistrationDao> getDAO(DAOTypes.COURSE_REGISTRATION, connection);
+
+                    const promise = assigmentDAO.unEnlolement(id);
+                    promise.then(result => {
+                        resolve(result);
+                        pool.releaseConnection(connection);
+                    }).catch(error=>{
+                        reject(error);
+                        pool.releaseConnection(connection);
+                    });
+
+                }
+
+            });
+
+
+        });
+    }
+
 }
 

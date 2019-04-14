@@ -124,6 +124,26 @@ var CourseRegistrationBoImpl = /** @class */ (function () {
             });
         });
     };
+    CourseRegistrationBoImpl.prototype.unEnrolCourseRegistration = function (id) {
+        return new Promise(function (resolve, reject) {
+            db_pool_1.pool.getConnection(function (err, connection) {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    var assigmentDAO = dao_factore_1.getDAO(dao_factore_1.DAOTypes.COURSE_REGISTRATION, connection);
+                    var promise = assigmentDAO.unEnlolement(id);
+                    promise.then(function (result) {
+                        resolve(result);
+                        db_pool_1.pool.releaseConnection(connection);
+                    }).catch(function (error) {
+                        reject(error);
+                        db_pool_1.pool.releaseConnection(connection);
+                    });
+                }
+            });
+        });
+    };
     return CourseRegistrationBoImpl;
 }());
 exports.CourseRegistrationBoImpl = CourseRegistrationBoImpl;

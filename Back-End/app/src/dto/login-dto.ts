@@ -1,7 +1,7 @@
-export class Login {
+export class LoginDto {
     constructor(
         public email:string,
         public password:string,
-        public position:string,
+        public position:string
     ){}
 }

@@ -14,7 +14,7 @@ courseRegistrationDispatcher.route("")
     });
 })
     .post(function (req, res) {
-    if (!("sid" in req.body && "cid" in req.body && "position" in req.body)) {
+    if (!("cr_id" in req.body && "sid" in req.body && "cid" in req.body && "position" in req.body)) {
         res.status(400).send("Invalid Request Body");
         return;
     }
@@ -61,8 +61,21 @@ courseRegistrationDispatcher.route("/:sid")
         res.status(500).send(error);
     });
 })
+    .delete(function (req, res) {
+    var promise = new courseRegistration_bo_impl_1.CourseRegistrationBoImpl().unEnrolCourseRegistration(req.params.sid);
+    promise.then(function (status) {
+        if (status) {
+            res.status(200).send(true);
+        }
+        else {
+            res.sendStatus(404);
+        }
+    }).catch(function (error) {
+        res.status(500).send(error);
+    });
+})
     .put(function (req, res) {
-    if (!("sid" in req.body && "cid" in req.body && "position" in req.body)) {
+    if (!("cr_id" in req.body && "sid" in req.body && "cid" in req.body && "position" in req.body)) {
         res.status(400).send("Invalid Request Body");
         return;
     }

@@ -5,8 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var cors = require("cors");
-var bodyParser = require('body-parser');
-var session = require('express-session');
 var assigment_dispatcher_1 = __importDefault(require("./assigment-dispatcher"));
 var course_materials_dispatcher_1 = __importDefault(require("./course_materials-dispatcher"));
 var lecture_dispatcher_1 = __importDefault(require("./lecture-dispatcher"));
@@ -14,6 +12,7 @@ var new_course_dispatcher_1 = __importDefault(require("./new_course-dispatcher")
 var student_dispatcher_1 = __importDefault(require("./student-dispatcher"));
 var studentAssigment_dispatcher_1 = __importDefault(require("./studentAssigment-dispatcher"));
 var courseRegistration_dispatcher_1 = __importDefault(require("./courseRegistration-dispatcher"));
+var login_dispatcher_1 = __importDefault(require("./login-dispatcher"));
 var mainDespatcher = express.Router();
 mainDespatcher.use(express.json());
 mainDespatcher.use(cors());
@@ -23,5 +22,6 @@ mainDespatcher.use('/api/v1/lectures', lecture_dispatcher_1.default);
 mainDespatcher.use('/api/v1/newCourses', new_course_dispatcher_1.default);
 mainDespatcher.use('/api/v1/courseRegistration', courseRegistration_dispatcher_1.default);
 mainDespatcher.use('/api/v1/students', student_dispatcher_1.default);
+mainDespatcher.use('/api/v1/login', login_dispatcher_1.default);
 mainDespatcher.use('/api/v1/studentAssigments', studentAssigment_dispatcher_1.default);
 exports.default = mainDespatcher;

@@ -43,7 +43,7 @@ export class CourseRegistrationDAOImpl implements CourseRegistrationDao {
 
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`INSERT INTO CourseRegistration VALUES ('${entity.sid}','${entity.cid}','${entity.position}')`,
+            this.connection.query(`INSERT INTO CourseRegistration VALUES ('${entity.cr_id}','${entity.sid}','${entity.cid}','${entity.position}')`,
                 (err, results) => {
 
                     if (err) {
@@ -73,7 +73,7 @@ export class CourseRegistrationDAOImpl implements CourseRegistrationDao {
     delete(id: string): Promise<boolean> {
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`DELETE FROM CourseRegistration WHERE cid='${id}'`,
+            this.connection.query(`DELETE FROM CourseRegistration WHERE sid='${id}'`,
                 (err, results) => {
 
                     if (err) {
@@ -96,6 +96,22 @@ export class CourseRegistrationDAOImpl implements CourseRegistrationDao {
                         reject(err);
                     } else {
                         resolve(results);
+                    }
+
+                });
+        });
+    }
+
+    unEnlolement(cr_id: string): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+
+            this.connection.query(`DELETE FROM CourseRegistration WHERE cr_id='${cr_id}'`,
+                (err, results) => {
+
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(results.affectedRows > 0);
                     }
 
                 });

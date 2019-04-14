@@ -7,4 +7,5 @@ import {CourseRegistration} from "../../entity/courseRegistration";
 export interface CourseRegistrationDao extends SuperDAO<CourseRegistration,string>{
 
     count():Promise<number>
+    unEnlolement(cr_id:string):Promise<boolean>
 }

@@ -9,4 +9,9 @@ var session = require('express-session');
 var main_dispatcher_1 = __importDefault(require("./dispatcher/main-dispatcher"));
 var app = express();
 app.use(main_dispatcher_1.default);
+app.use(session({
+    secret: "Shh, its a secret!",
+    resave: false,
+    saveUninitialized: true
+}));
 app.listen(3020, function () { return console.log("Server is listening at 3002"); });

@@ -34,7 +34,7 @@ var CourseRegistrationDAOImpl = /** @class */ (function () {
     CourseRegistrationDAOImpl.prototype.save = function (entity) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("INSERT INTO CourseRegistration VALUES ('" + entity.sid + "','" + entity.cid + "','" + entity.position + "')", function (err, results) {
+            _this.connection.query("INSERT INTO CourseRegistration VALUES ('" + entity.cr_id + "','" + entity.sid + "','" + entity.cid + "','" + entity.position + "')", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -60,7 +60,7 @@ var CourseRegistrationDAOImpl = /** @class */ (function () {
     CourseRegistrationDAOImpl.prototype.delete = function (id) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("DELETE FROM CourseRegistration WHERE cid='" + id + "'", function (err, results) {
+            _this.connection.query("DELETE FROM CourseRegistration WHERE sid='" + id + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -79,6 +79,19 @@ var CourseRegistrationDAOImpl = /** @class */ (function () {
                 }
                 else {
                     resolve(results);
+                }
+            });
+        });
+    };
+    CourseRegistrationDAOImpl.prototype.unEnlolement = function (cr_id) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.connection.query("DELETE FROM CourseRegistration WHERE cr_id='" + cr_id + "'", function (err, results) {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(results.affectedRows > 0);
                 }
             });
         });
