@@ -10,6 +10,7 @@ import studentDispatcher from "./student-dispatcher";
 import studentAssigmentDispatcher from "./studentAssigment-dispatcher";
 import courseRegistrationDispatcher from "./courseRegistration-dispatcher";
 import loginDispatcher from "./login-dispatcher";
+import log_sessionDispatcher from "./log_session-dispatcher";
 
 const mainDespatcher = express.Router();
 mainDespatcher.use(express.json());
@@ -23,5 +24,6 @@ mainDespatcher.use('/api/v1/courseRegistration',courseRegistrationDispatcher);
 mainDespatcher.use('/api/v1/students',studentDispatcher);
 mainDespatcher.use('/api/v1/login',loginDispatcher);
 mainDespatcher.use('/api/v1/studentAssigments',studentAssigmentDispatcher);
+mainDespatcher.use('/api/v1/Log_session',log_sessionDispatcher);
 
 export default mainDespatcher;

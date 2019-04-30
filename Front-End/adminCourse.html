@@ -150,6 +150,13 @@
                                 <span class="lnr lnr-magnifier" id="search"></span>
                             </button>
                         </li>
+                        <li class="dropdown" style="margin-left: 200px">
+                            <div class="dropdown-toggle" id="user_session" data-toggle="dropdown" style="color: white; margin-left: 20px;"> User</div>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" id="login" href="Login_page.html">Login</a>
+                                <a class="dropdown-item" id="logout">Logout</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -396,6 +403,61 @@
 
         gtag('config', 'UA-23581568-13');
         <!--footer-->
+
+
+        var studentID;
+
+        $(document).ready(function () {
+
+            var ajaxConfig = {
+                method: "GET",
+                url:SERVER_URL + "/api/v1/login",
+                async: true
+            };
+
+            $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+
+                studentID = result[1];
+                $("#user_session").text(studentID);
+
+                if(studentID != null){
+                    $("#logout").show();
+                    $("#login").hide();
+                }else{
+                    $("#login").show();
+                    $("#logout").hide();
+                }
+
+                console.log(studentID);
+
+            }).fail(function(jxhr,statusText,error){
+                alert("Unable to save the assigment, try again");
+                console.log(error);
+            });
+        });
+
+        $("#logout").click(function(){
+            var ajaxConfig = {
+                method: "POST",
+                url:SERVER_URL + "/api/v1/login/login",
+                async: true
+            };
+
+            $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+
+                studentID = 'User';
+                $("#user_session").text(studentID);
+                $("#login").show();
+                $("#logout").hide();
+                console.log(studentID);
+                alert("Log Out");
+            }).fail(function(jxhr,statusText,error){
+                alert("Unable to save the assigment, try again");
+                console.log(error);
+            });
+        });
+
+
 
         <!--front end connector the back end using ajax-->
 

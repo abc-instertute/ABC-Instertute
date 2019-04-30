@@ -5,10 +5,10 @@ var Log_sessionDaoImpl = /** @class */ (function () {
     function Log_sessionDaoImpl(connection) {
         this.connection = connection;
     }
-    Log_sessionDaoImpl.prototype.delete = function (id) {
+    Log_sessionDaoImpl.prototype.delete = function (email) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("DELETE FROM Login WHERE email='" + id + "'", function (err, results) {
+            _this.connection.query("DELETE FROM Log_session WHERE email='" + email + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -21,7 +21,7 @@ var Log_sessionDaoImpl = /** @class */ (function () {
     Log_sessionDaoImpl.prototype.findAll = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("SELECT * FROM Login", function (err, results) {
+            _this.connection.query("SELECT * FROM Log_session ", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -34,7 +34,7 @@ var Log_sessionDaoImpl = /** @class */ (function () {
     Log_sessionDaoImpl.prototype.save = function (l) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("INSERT INTO Login VALUES ('" + l.id + "','" + l.email + "')", function (err, results) {
+            _this.connection.query("INSERT INTO Log_session VALUES ('" + l.id + "','" + l.email + "')", function (err, results) {
                 if (err) {
                     reject(err);
                 }

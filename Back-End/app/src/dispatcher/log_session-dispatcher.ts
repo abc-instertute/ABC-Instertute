@@ -1,13 +1,12 @@
 import express = require("express");
-import {LoginBoImpl} from "../business/Login-bo-impl";
+import {LoginBoImpl} from "../business/log_session-bo-impl";
 import {error} from "util";
 import cors = require("cors");
-import {AssigmentBoImpl} from "../business/assigment-bo-impl";
-import mainDespatcher from "./main-dispatcher";
+import mainDispatcher from "./main-dispatcher";
 
-const loginDispatcher = express.Router();
+const Log_sessionDispatcher = express.Router();
 
-loginDispatcher.route("/log_session")
+Log_sessionDispatcher.route("")
     .post((req, res) => {
 
         if (!("id" in req.body  && "email" in req.body )){
@@ -19,6 +18,19 @@ loginDispatcher.route("/log_session")
             .catch(err=>res.status(500).send(err));
 
     })
+
+    .get((req, res) => {
+
+        const promise = new LoginBoImpl().findAllLog_session();
+        promise.then(assigment=>{
+            res.status(200).json(assigment);
+        }).catch(error=>{
+            res.status(500).send(error);
+        });
+
+    })
+;
+Log_sessionDispatcher.route("/:email")
     .delete((req, res) => {
 
         const promise = new LoginBoImpl().deleteLogin(req.params.email);
@@ -36,5 +48,4 @@ loginDispatcher.route("/log_session")
 
     })
 ;
-
-export default loginDispatcher;
+export default Log_sessionDispatcher;

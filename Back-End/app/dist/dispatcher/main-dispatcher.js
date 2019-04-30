@@ -13,6 +13,7 @@ var student_dispatcher_1 = __importDefault(require("./student-dispatcher"));
 var studentAssigment_dispatcher_1 = __importDefault(require("./studentAssigment-dispatcher"));
 var courseRegistration_dispatcher_1 = __importDefault(require("./courseRegistration-dispatcher"));
 var login_dispatcher_1 = __importDefault(require("./login-dispatcher"));
+var log_session_dispatcher_1 = __importDefault(require("./log_session-dispatcher"));
 var mainDespatcher = express.Router();
 mainDespatcher.use(express.json());
 mainDespatcher.use(cors());
@@ -24,4 +25,5 @@ mainDespatcher.use('/api/v1/courseRegistration', courseRegistration_dispatcher_1
 mainDespatcher.use('/api/v1/students', student_dispatcher_1.default);
 mainDespatcher.use('/api/v1/login', login_dispatcher_1.default);
 mainDespatcher.use('/api/v1/studentAssigments', studentAssigment_dispatcher_1.default);
+mainDespatcher.use('/api/v1/Log_session', log_session_dispatcher_1.default);
 exports.default = mainDespatcher;

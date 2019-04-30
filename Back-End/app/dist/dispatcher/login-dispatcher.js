@@ -11,7 +11,7 @@ loginDispatcher.use(morgan('dev'));
 loginDispatcher.use(bodyParser.urlencoded({ extended: true }));
 loginDispatcher.use(cookieParser());
 exports.fruits = [];
-loginDispatcher.route("/login")
+loginDispatcher.route("/login/:email")
     .get(function (req, res) {
     var promise = new Login_bo_impl_1.LoginBoImpl().findAllLogin();
     promise.then(function (assigment) {
@@ -29,7 +29,7 @@ loginDispatcher.route("/login")
     promise.then(function (status) { return res.status(201).json(status); })
         .catch(function (err) { return res.status(500).send(err); });
 });
-loginDispatcher.route("/login/:email")
+loginDispatcher.route("/login")
     .get(function (req, res) {
     var promise = new Login_bo_impl_1.LoginBoImpl().findLogin(req.params.email);
     promise.then(function (assigement) {
@@ -42,6 +42,10 @@ loginDispatcher.route("/login/:email")
     }).catch(function (error) {
         res.status(500).send(error);
     });
+})
+    .post(function (req, res) {
+    exports.fruits = [];
+    res.status(200).json(exports.fruits);
 });
 loginDispatcher.route("")
     .post(function (req, res) {
@@ -55,7 +59,7 @@ loginDispatcher.route("")
             var uniqueId = uuid();
             var email = assigement[0].email;
             exports.fruits = [uniqueId, email];
-            res.status(200).send(exports.fruits);
+            res.status(200).json(exports.fruits);
         }
         else {
             res.sendStatus(404);
@@ -97,5 +101,8 @@ loginDispatcher.route("")
     }).catch(function (error) {
         res.status(500).send(error);
     });
+})
+    .get(function (req, res) {
+    res.status(200).json(exports.fruits);
 });
 exports.default = loginDispatcher;

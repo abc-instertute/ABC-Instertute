@@ -16,7 +16,8 @@ loginDispatcher.use(morgan('dev'));
 loginDispatcher.use(bodyParser.urlencoded({ extended: true }));
 loginDispatcher.use(cookieParser());
 export let fruits: string[] =[];
-loginDispatcher.route("/login")
+
+loginDispatcher.route("/login/:email")
     .get((req, res) => {
 
         const promise = new LoginBoImpl().findAllLogin();
@@ -40,7 +41,7 @@ loginDispatcher.route("/login")
 
     });
 
-loginDispatcher.route("/login/:email")
+loginDispatcher.route("/login")
     .get((req, res) => {
 
         const promise = new LoginBoImpl().findLogin(req.params.email);
@@ -56,7 +57,14 @@ loginDispatcher.route("/login/:email")
             res.status(500).send(error);
         });
 
-    });
+    })
+
+    .post((req, res) => {
+        fruits = [];
+        res.status(200).json(fruits);
+    })
+
+;
 
 
 
@@ -76,7 +84,8 @@ loginDispatcher.route("")
                 const uniqueId = uuid();
                 const email = assigement[0].email;
                 fruits = [uniqueId,email];
-                res.status(200).send(fruits);
+
+                res.status(200).json(fruits);
             }else{
                 res.sendStatus(404);
             }
@@ -127,6 +136,11 @@ loginDispatcher.route("")
         });
 
     })
+
+    .get((req, res) => {
+        res.status(200).json(fruits);
+    })
+
 ;
 
 export default loginDispatcher;
