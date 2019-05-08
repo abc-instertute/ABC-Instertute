@@ -2,6 +2,9 @@ import express = require("express");
 import {AssigmentBoImpl} from "../business/assigment-bo-impl";
 import {error} from "util";
 import cors = require("cors");
+import {LoginBoImpl} from "../business/login-bo-impl";
+import {fruits} from "./login-dispatcher";
+export let ass_link: string[] =[];
 
 
 const assigmentDispatcher = express.Router();
@@ -103,4 +106,31 @@ assigmentDispatcher.route("/:id")
 
     });
 
+
+assigmentDispatcher.route("/assigmentID/:id")
+
+    .get((req, res) => {
+
+        const promise = new AssigmentBoImpl().findAssigment(req.params.id);
+        promise.then(assigement=>{
+
+            if (assigement.length > 0){
+                ass_link = [assigement[0].aid,assigement[0].aname,assigement[0].description,assigement[0].duedate,assigement[0].cid];
+                res.status(200).send(ass_link);
+            }else{
+                res.sendStatus(404);
+            }
+
+        }).catch(error=>{
+            res.status(500).send(error);
+        });
+
+    })
+;
+
+assigmentDispatcher.route("/assigmentID")
+    .get((req, res) => {
+        res.status(200).json(ass_link);
+    })
+;
 export default assigmentDispatcher;

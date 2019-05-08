@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var assigment_bo_impl_1 = require("../business/assigment-bo-impl");
 var cors = require("cors");
+exports.ass_link = [];
 var assigmentDispatcher = express.Router();
 assigmentDispatcher.route("")
     .get(function (req, res) {
@@ -81,5 +82,24 @@ assigmentDispatcher.route("/:id")
     }).catch(function (error) {
         res.status(500).send(error);
     });
+});
+assigmentDispatcher.route("/assigmentID/:id")
+    .get(function (req, res) {
+    var promise = new assigment_bo_impl_1.AssigmentBoImpl().findAssigment(req.params.id);
+    promise.then(function (assigement) {
+        if (assigement.length > 0) {
+            exports.ass_link = [assigement[0].aid, assigement[0].aname, assigement[0].description, assigement[0].duedate, assigement[0].cid];
+            res.status(200).send(exports.ass_link);
+        }
+        else {
+            res.sendStatus(404);
+        }
+    }).catch(function (error) {
+        res.status(500).send(error);
+    });
+});
+assigmentDispatcher.route("/assigmentID")
+    .get(function (req, res) {
+    res.status(200).json(exports.ass_link);
 });
 exports.default = assigmentDispatcher;

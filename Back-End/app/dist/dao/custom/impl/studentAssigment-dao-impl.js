@@ -60,7 +60,7 @@ var StudentAssigmentDAOImpl = /** @class */ (function () {
     StudentAssigmentDAOImpl.prototype.save = function (entity) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("INSERT INTO studentassigment VALUES ('" + entity.aid + "','" + entity.systemDate + "','" + entity.sid + "','" + entity.sname + "','" + entity.cid + "','" + entity.file_upload + "')", function (err, results) {
+            _this.connection.query("INSERT INTO studentassigment VALUES ('" + entity.aid + "','" + entity.systemDate + "','" + entity.sid + "','" + entity.cid + "','" + entity.file_upload + "')", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -73,12 +73,25 @@ var StudentAssigmentDAOImpl = /** @class */ (function () {
     StudentAssigmentDAOImpl.prototype.update = function (entity) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("UPDATE studentassigment SET  systemDate ='" + entity.systemDate + "', sid ='" + entity.sid + "', sname ='" + entity.sname + "',cid = '" + entity.cid + "',file_upload = '" + entity.file_upload + "' WHERE aid='" + entity.aid + "'", function (err, results) {
+            _this.connection.query("UPDATE studentassigment SET  systemDate ='" + entity.systemDate + "', sid ='" + entity.sid + "',cid = '" + entity.cid + "',file_upload = '" + entity.file_upload + "' WHERE aid='" + entity.aid + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }
                 else {
                     resolve(results.affectedRows > 0);
+                }
+            });
+        });
+    };
+    StudentAssigmentDAOImpl.prototype.v_One_student = function (entity) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.connection.query("SELECT * FROM StudentAssigment WHERE aid='" + entity.aid + "' and  cid ='" + entity.cid + "' and sid ='" + entity.sid + "'", function (err, results) {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(results);
                 }
             });
         });

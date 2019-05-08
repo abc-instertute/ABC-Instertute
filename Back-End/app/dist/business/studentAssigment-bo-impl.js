@@ -124,6 +124,26 @@ var StudentAssigmentBoImpl = /** @class */ (function () {
             });
         });
     };
+    StudentAssigmentBoImpl.prototype.OneStudentAssigment = function (assigment) {
+        return new Promise(function (resolve, reject) {
+            db_pool_1.pool.getConnection(function (err, connection) {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    var assigmentDAO = dao_factore_1.getDAO(dao_factore_1.DAOTypes.STUDENT_ASSIGMENT, connection);
+                    var promise = assigmentDAO.v_One_student(assigment);
+                    promise.then(function (result) {
+                        resolve(result);
+                        db_pool_1.pool.releaseConnection(connection);
+                    }).catch(function (error) {
+                        reject(error);
+                        db_pool_1.pool.releaseConnection(connection);
+                    });
+                }
+            });
+        });
+    };
     return StudentAssigmentBoImpl;
 }());
 exports.StudentAssigmentBoImpl = StudentAssigmentBoImpl;

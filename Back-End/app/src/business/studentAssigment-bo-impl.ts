@@ -3,6 +3,8 @@ import {pool} from "../db/db-pool";
 import {DAOTypes, getDAO} from "../dao/dao-factore";
 import {StudentAssigmentDao} from "../dao/custom/studentAssigment-dao";
 import Promise = require("promise");
+import {StudentAssigment} from "../entity/studentAssigment";
+
 
 export class StudentAssigmentBoImpl {
 
@@ -157,4 +159,31 @@ export class StudentAssigmentBoImpl {
         });
     }
 
+    OneStudentAssigment(assigment: StudentAssigmentDto): Promise<Array<StudentAssigment>>{
+        return new Promise((resolve, reject) => {
+
+            pool.getConnection((err, connection) => {
+
+                if (err){
+                    reject(err);
+                }else{
+
+                    const assigmentDAO = <StudentAssigmentDao> getDAO(DAOTypes.STUDENT_ASSIGMENT, connection);
+
+                    const promise = assigmentDAO.v_One_student(assigment);
+                    promise.then(result => {
+                        resolve(result);
+                        pool.releaseConnection(connection);
+                    }).catch(error=>{
+                        reject(error);
+                        pool.releaseConnection(connection);
+                    });
+
+                }
+
+            });
+
+
+        });
+    }
 }

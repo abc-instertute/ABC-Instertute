@@ -2,6 +2,8 @@ import express = require("express");
 import {StudentAssigmentBoImpl} from "../business/studentAssigment-bo-impl";
 import {error} from "util";
 import cors = require("cors");
+import {LoginBoImpl} from "../business/login-bo-impl";
+import {fruits} from "./login-dispatcher";
 
 
 const studentAssigmentDispatcher = express.Router();
@@ -19,7 +21,7 @@ studentAssigmentDispatcher.route("")
     })
     .post((req, res) => {
 
-        if (!("aid" in req.body  && "systemDate" in req.body && "sid" in req.body && "sname" in req.body && "cid" in req.body && "file_upload" in req.body)){
+        if (!("aid" in req.body  && "systemDate" in req.body && "sid" in req.body && "cid" in req.body && "file_upload" in req.body)){
             res.status(400).send("Invalid Request Body");
             return;
         }
@@ -78,7 +80,7 @@ studentAssigmentDispatcher.route("/:id")
     })
     .put((req, res) => {
 
-        if (!("aid" in req.body  && "systemDate" in req.body && "sid" in req.body && "sname" in req.body && "cid" in req.body && "file_upload" in req.body)){
+        if (!("aid" in req.body  && "systemDate" in req.body && "sid" in req.body && "cid" in req.body && "file_upload" in req.body)){
             res.status(400).send("Invalid Request Body");
             return;
         }
@@ -103,4 +105,24 @@ studentAssigmentDispatcher.route("/:id")
 
     });
 
+
+studentAssigmentDispatcher.route("/student")
+    .post((req, res) => {
+
+        if (!("aid" in req.body  && "sid" in req.body && "cid" in req.body )){
+            res.status(400).send("Invalid Request Body");
+            return;
+        }
+        const promise = new StudentAssigmentBoImpl().OneStudentAssigment(req.body);
+        promise.then(assigement=>{
+            if (assigement.length == 1){
+                res.status(200).json(assigement[0].file_upload);
+            }else{
+                res.sendStatus(404);
+            }
+        }).catch(error=>{
+            res.status(500).send(error);
+        });
+    })
+;
 export default studentAssigmentDispatcher;

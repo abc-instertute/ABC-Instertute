@@ -66,10 +66,6 @@ loginDispatcher.route("/login")
 
 ;
 
-
-
-
-
 loginDispatcher.route("")
 
     .post((req, res) => {
