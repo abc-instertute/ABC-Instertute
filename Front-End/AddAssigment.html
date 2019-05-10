@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
-<!-- Mirrored from colorlib.com/preview/theme/eclipse/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Feb 2019 15:42:10 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -20,7 +16,7 @@
   <meta charset="UTF-8" />
 
   <title>Add Assigment</title>
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet" />
+<!--  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet" />-->
 
   <link rel="stylesheet" href="css/linearicons.css" />
   <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -88,7 +84,6 @@
     <nav class="navbar navbar-expand-lg  navbar-light">
       <div class="container">
         <h3 id="hs" style="color:white">ABC Institute</h3>
-
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent" >
           <ul class="navbar-nav">
             <li><a href="index-2.html">Home</a></li>
@@ -325,7 +320,7 @@
     $(document).ready(function () {
 
       var ajaxConfig = {
-        method: "GET",
+          method: "GET",
         url:SERVER_URL + "/api/v1/login",
         async: true
       };
@@ -346,7 +341,6 @@
         console.log(studentID);
 
       }).fail(function(jxhr,statusText,error){
-        alert("Unable to save the assigment, try again");
         console.log(error);
       });
     });
@@ -367,7 +361,6 @@
         console.log(studentID);
         alert("Log Out");
       }).fail(function(jxhr,statusText,error){
-        alert("Unable to save the assigment, try again");
         console.log(error);
       });
     });

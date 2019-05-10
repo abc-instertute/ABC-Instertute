@@ -54,11 +54,14 @@ loginDispatcher.route("")
         return;
     }
     var promise = new Login_bo_impl_1.LoginBoImpl().loginValidation(req.body);
+    console.log(req.body);
     promise.then(function (assigement) {
+        console.log(assigement);
         if (assigement.length == 1) {
             var uniqueId = uuid();
             var email = assigement[0].email;
             exports.fruits = [uniqueId, email];
+            console.log(exports.fruits);
             res.status(200).json(exports.fruits);
         }
         else {

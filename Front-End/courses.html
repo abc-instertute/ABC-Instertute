@@ -88,8 +88,6 @@
 
   </style>
 
-
-
 </head>
 
 <body>
@@ -177,6 +175,7 @@
 
 
 </br>
+
 <footer class="section-gap" style="height: 350px; background: linear-gradient(to bottom, #030a1d 88%, #6600cc 126%)">
   <div class="container">
     <div class="row">
@@ -339,7 +338,52 @@
         }).fail(function(jxhr,statusText,error){
           console.log(error);
         });
+
+      var ajaxConfig = {
+        method: "GET",
+        url:SERVER_URL + "/api/v1/login",
+        async: true
+      };
+      $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+        studentID = result[1];
+        $("#user_session").text(studentID);
+
+        if(studentID != null){
+          $("#logout").show();
+          $("#login").hide();
+        }else{
+          $("#login").show();
+          $("#logout").hide();
+        }
+
+      }).fail(function(jxhr,statusText,error){
+        console.log(error);
+      });
+
     });
+
+    $("#logout").click(function(){
+      var ajaxConfig = {
+          method: "POST",
+        url:SERVER_URL + "/api/v1/login/login",
+        async: true
+      };
+
+      $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+        studentID = 'User';
+        $("#user_session").text(studentID);
+        $("#login").show();
+        $("#logout").hide();
+        console.log(studentID);
+        alert("Log Out");
+      }).fail(function(jxhr,statusText,error){
+        alert("Unable to save the assigment, try again");
+        console.log(error);
+      });
+    });
+
+
+
   </script>
 </body>
 </html>

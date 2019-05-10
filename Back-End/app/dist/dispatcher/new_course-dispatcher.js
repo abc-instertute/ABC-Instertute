@@ -4,6 +4,7 @@ var express = require("express");
 var new_course_bo_impl_1 = require("../business/new_course-bo-impl");
 var cors = require("cors");
 var new_courseDispatcher = express.Router();
+exports.course_id = [];
 new_courseDispatcher.route("")
     .get(function (req, res) {
     var promise = new new_course_bo_impl_1.New_courseBoImpl().findAllNew_course();
@@ -37,10 +38,10 @@ new_courseDispatcher.route("")
 new_courseDispatcher.route("/:id")
     .get(function (req, res) {
     var promise = new new_course_bo_impl_1.New_courseBoImpl().findNew_course(req.params.id);
-    console.log(req.params.id);
     promise.then(function (assigement) {
-        console.log(assigement);
         if (assigement.length > 0) {
+            console.log(assigement[0].file_upload);
+            exports.course_id = [assigement[0].file_upload, assigement[0].id, assigement[0].name, assigement[0].free, assigement[0].seat.toString(), assigement[0].schedule, assigement[0].period, assigement[0].description, assigement[0].outcome, assigement[0].audience];
             res.status(200).send(assigement[0]);
         }
         else {
@@ -83,5 +84,10 @@ new_courseDispatcher.route("/:id")
     }).catch(function (error) {
         res.status(500).send(error);
     });
+});
+new_courseDispatcher.route("/sew")
+    .post(function (req, res) {
+    console.log(exports.course_id);
+    res.status(200).json(exports.course_id);
 });
 exports.default = new_courseDispatcher;

@@ -75,12 +75,14 @@ loginDispatcher.route("")
             return;
         }
         const promise = new LoginBoImpl().loginValidation(req.body);
+        console.log(req.body);
         promise.then(assigement=>{
+            console.log(assigement);
             if (assigement.length == 1){
                 const uniqueId = uuid();
                 const email = assigement[0].email;
                 fruits = [uniqueId,email];
-
+                console.log(fruits);
                 res.status(200).json(fruits);
             }else{
                 res.sendStatus(404);

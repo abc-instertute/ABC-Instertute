@@ -19,7 +19,7 @@
 
   <meta charset="UTF-8" />
 
-  <title>StudentAssigmentDto</title>
+  <title>Student Assigment</title>
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/linearicons.css" />
@@ -35,79 +35,115 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+
+    #hs{
+      position: relative;
+      animation-name: walkingMan;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes walkingMan{
+      0%{
+        color: aqua;
+      }
+
+      20%{
+        color: red;
+      }
+
+      40%{
+        color: blue;
+      }
+
+      60%{
+        color: yellow;
+      }
+      80%{
+        color: blueviolet;
+      }
+
+      100%{
+        color: brown;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-  <header class="default-header">
-    <nav class="navbar navbar-expand-lg  navbar-light">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="lnr lnr-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li><a href="index-2.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-
-            <li class="dropdown">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                Pages
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="elements.html">Elements</a>
-                <a class="dropdown-item" href="course-details.html">Course Details</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                Blog
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="blog-home.html">Blog Home</a>
-                <a class="dropdown-item" href="blog-single.html">Blog Details</a>
-              </div>
-            </li>
-            <li><a href="contacts.html">Contacts</a></li>
-            <li>
-              <button class="search">
-                <span class="lnr lnr-magnifier" id="search"></span>
-              </button>
-            </li>
-              <li class="dropdown" style="margin-left: 200px">
-                  <div class="dropdown-toggle" id="user_session" data-toggle="dropdown" style="color: white; margin-left: 20px;"> User</div>
-                  <div class="dropdown-menu">
-                      <a class="dropdown-item" id="login" href="Login_page.html">Login</a>
-                      <a class="dropdown-item" id="logout">Logout</a>
-                  </div>
-              </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="search-input" id="search-input-box">
-      <div class="container">
-        <form class="d-flex justify-content-between">
-          <input type="text" class="form-control" id="search-input" placeholder="Search Here" />
-          <button type="submit" class="btn"></button>
-          <span class="lnr lnr-cross" id="close-search" title="Close Search"></span>
-        </form>
-      </div>
-    </div>
-  </header>
-  <section style="height: 100px; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">
+<header class="default-header">
+  <nav class="navbar navbar-expand-lg  navbar-light">
     <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-lg-12 banner-right">
-          <h1 class="text-white">
-            StudentAssigmentDto
-          </h1>
-        </div>
+      <h3 id="hs" style="color:white">ABC Institute</h3>
+
+      <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent" >
+        <ul class="navbar-nav">
+          <li><a href="index-2.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+              Pages
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="elements.html">Elements</a>
+              <a class="dropdown-item" href="course-details.html">Course Details</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+              Blog
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="blog-home.html">Blog Home</a>
+              <a class="dropdown-item" href="blog-single.html">Blog Details</a>
+            </div>
+          </li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li>
+            <button class="search">
+              <span class="lnr lnr-magnifier" id="search"></span>
+            </button>
+          </li>
+          <li class="dropdown" style="margin-left: 200px">
+            <div class="dropdown-toggle" id="user_session" data-toggle="dropdown" style="color: white; margin-left: 20px;"> User</div>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" id="login" href="Login_page.html">Login</a>
+              <a class="dropdown-item" id="logout">Logout</a>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+  </nav>
+  <div class="search-input" id="search-input-box">
+    <div class="container">
+      <form class="d-flex justify-content-between">
+        <input type="text" class="form-control" id="search-input" placeholder="Search Here" />
+        <button type="submit" class="btn"></button>
+        <span class="lnr lnr-cross" id="close-search" title="Close Search"></span>
+      </form>
+    </div>
+  </div>
+</header>
+<section style="height: 100px; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">
+
+</section>
+
   <br><br>
   <section class="testimonials-area">
     <div class="container">
@@ -317,7 +353,7 @@
         $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
             studentID = result[1];
             $("#user_session").text(studentID);
-
+            console.log(studentID);
             if(studentID != null){
                 $("#logout").show();
                 $("#login").hide();
@@ -327,7 +363,6 @@
             }
 
         }).fail(function(jxhr,statusText,error){
-            alert("Unable to save the assigment, try again");
             console.log(error);
         });
       var ajaxConfig1 = {
@@ -373,7 +408,6 @@
             console.log(studentID);
             alert("Log Out");
         }).fail(function(jxhr,statusText,error){
-            alert("Unable to save the assigment, try again");
             console.log(error);
         });
     });

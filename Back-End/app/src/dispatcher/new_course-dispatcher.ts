@@ -3,9 +3,8 @@ import {New_courseBoImpl} from "../business/new_course-bo-impl";
 import {error} from "util";
 import cors = require("cors");
 
-
 const new_courseDispatcher = express.Router();
-
+export let course_id: string[]=[];
 new_courseDispatcher.route("")
     .get((req, res) => {
 
@@ -47,10 +46,11 @@ new_courseDispatcher.route("/:id")
     .get((req, res) => {
 
         const promise = new New_courseBoImpl().findNew_course(req.params.id);
-        console.log(req.params.id);
         promise.then(assigement=>{
-            console.log(assigement);
             if (assigement.length > 0){
+                console.log(assigement[0].file_upload);
+                course_id = [assigement[0].file_upload,assigement[0].id,assigement[0].name,assigement[0].free,assigement[0].seat.toString(),assigement[0].schedule,assigement[0].period,assigement[0].description,assigement[0].outcome,assigement[0].audience];
+
                 res.status(200).send(assigement[0]);
             }else{
                 res.sendStatus(404);
@@ -103,6 +103,11 @@ new_courseDispatcher.route("/:id")
         });
 
     });
-
+new_courseDispatcher.route("/sew")
+    .post((req, res) => {
+        console.log(course_id);
+        res.status(200).json(course_id);
+    })
+;
 export default new_courseDispatcher;
 
