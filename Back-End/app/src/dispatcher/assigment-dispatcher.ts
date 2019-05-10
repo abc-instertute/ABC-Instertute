@@ -4,7 +4,7 @@ import {error} from "util";
 import cors = require("cors");
 import {LoginBoImpl} from "../business/login-bo-impl";
 import {fruits} from "./login-dispatcher";
-export let ass_link: string[] =[];
+export let ass_link: string[] ;
 
 
 const assigmentDispatcher = express.Router();
@@ -128,9 +128,9 @@ assigmentDispatcher.route("/assigmentID/:id")
     })
 ;
 
-assigmentDispatcher.route("/assigmentID")
-    .get((req, res) => {
-        res.status(200).json(ass_link);
+assigmentDispatcher.route("/ass_link")
+    .post((req, res) => {
+        res.status(200).send(ass_link);
     })
 ;
 export default assigmentDispatcher;

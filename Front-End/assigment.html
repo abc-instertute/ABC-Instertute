@@ -149,7 +149,7 @@
                   <label class="form-control" name="cid" id="cid" ></label>
                 </div>
                 <div class="form-group">
-                  <label class="form-control" name="file-upload" id="file-upload" ></label>
+                  <label class="form-control" name="file-upload" id="file_upload" ></label>
                 </div>
                 <div class="form-group">
                     <label class="form-control" name="dox" id="dox" ></label>
@@ -309,7 +309,6 @@
       var assigment_duedate;
 
     $(document).ready(function () {
-      loadAllAssigment();
         var ajaxConfig = {
             method: "GET",
             url:SERVER_URL + "/api/v1/login",
@@ -327,25 +326,23 @@
                 $("#logout").hide();
             }
 
-            console.log(studentID);
-
         }).fail(function(jxhr,statusText,error){
             alert("Unable to save the assigment, try again");
             console.log(error);
         });
       var ajaxConfig1 = {
-        method: "GET",
-        url:SERVER_URL + "/api/v1/assigments/assigmentID",
+        method: "POST",
+        url:SERVER_URL + "/api/v1/assigments/ass_link",
         async: true
       };
 
       $.ajax(ajaxConfig1).done(function(result,statusText,jxhr){
+        console.log(result);
         assigment_id = result[0];
         assigment_name = result[1];
         assigment_detail = result[2];
         assigment_cid = result[3];
         assigment_duedate = result[4];
-
         $("#aid").text(assigment_id);
         $("#cid").text(assigment_cid);
         $("#ass_name").text(assigment_name);
@@ -357,7 +354,8 @@
         alert("Unable to save the assigment, try again");
         console.log(error);
       });
-
+      url_lode();
+      run();
     });
 
     $("#logout").click(function(){
@@ -381,7 +379,6 @@
     });
 
 
-
     $("#btnUpdate").click(function(){
       getFileUploder();
             var assigment = {
@@ -389,7 +386,7 @@
                 systemDate: $("#systemDate").text(),
                 sid: $("#sid").text(),
                 cid: $("#cid").text(),
-                file_upload: $("#file-upload").text(),
+                file_upload: $("#file_upload").text(),
                 dox: $("#dox").text()
             };
 
@@ -403,7 +400,6 @@
 
             $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
                 alert("Updated Successfully");
-                loadAllAssigment();
                 $('button[type="reset"]').trigger("click");
             }).fail(function(jxhr,statusText,error){
                 alert("Unable to update the assigment, try again");
@@ -412,27 +408,24 @@
     });
 
       $("#btnSave").click(function(){
+        $("#add").hide();
             var assigment = {
               aid: $("#aid").text(),
               systemDate: $("#systemDate").text(),
               sid: $("#sid").text(),
-              cid: $("#cid").val(),
-              file_upload: $("#file-upload").text(),
+              cid: $("#cid").text(),
+              file_upload: $("#file_upload").text(),
               dox: $("#dox").text()
             };
-
-
             var ajaxConfig = {
                 method: "POST",
-                url: SERVER_URL + "/api/v1/studentAssigments/",
+                url: SERVER_URL + "/api/v1/studentAssigments",
                 async: true,
                 contentType: "application/json",
                 data: JSON.stringify(assigment)
             }
-
             $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
                 alert("Added Successfully");
-                loadAllAssigment();
                 $('button[type="reset"]').trigger("click");
             }).fail(function(jxhr,statusText,error){
                 alert("Unable to save the assigment, try again");
@@ -440,25 +433,11 @@
             });
       });
 
-    function loadAllAssigment(){
-        var ajaxConfig = {
-            method: "GET",
-            url:SERVER_URL + "/api/v1/studentAssigments/student",
-            async: true
-        };
-        $.ajax(ajaxConfig).done(function(assigments,statusText,jxhr){
-            console.log(assigments);
-            $("#file-upload").text(assigments);
-        }).fail(function(jxhr,statusText,error){
-            console.log(error);
-        });
-    }
-
     <!--front end connector the back end using ajax-->
 
     $("#btnConform").click(function(){
+
       if (confirm("Are you sure?. After conform you can't change it.")){
-        $("#add").hide();
         $("#btnSave").hide();
         $("#btnUpdate").hide();
         $("#btnConform").hide();
@@ -506,6 +485,41 @@
         }return console.log(x);
       }client.picker(options).open();
     }
+    function url_lode() {
+      var assigment = {
+        aid: $("#aid").text(),
+        sid: $("#sid").text(),
+        cid: $("#cid").text()
+      };
+      var ajaxConfig = {
+        method: "POST",
+        url:SERVER_URL + "/api/v1/studentAssigments/student",
+        async: true,
+        contentType: "application/json",
+        data: JSON.stringify(assigment)
+      }
+      $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
+        console.log('sucsses');
+      }).fail(function(jxhr,statusText,error){
+        console.log(error);
+      });
+    }
+
+    function run() {
+      var ajaxConfig1 = {
+        method: "POST",
+        url:SERVER_URL + "/api/v1/studentAssigments/dox",
+        async: true
+      };
+      $.ajax(ajaxConfig1).done(function(result,statusText,jxhr){
+        $("#file_upload").text(result);
+        console.log(result);
+      }).fail(function(jxhr,statusText,error){
+        alert("Unable to save the assigment, try again");
+        console.log(error);
+      });
+    }
+
   </script>
 </body>
 

@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var studentAssigment_bo_impl_1 = require("../business/studentAssigment-bo-impl");
 var cors = require("cors");
+exports.dox_url = [];
 var studentAssigmentDispatcher = express.Router();
 studentAssigmentDispatcher.route("")
     .get(function (req, res) {
@@ -91,7 +92,9 @@ studentAssigmentDispatcher.route("/student")
     var promise = new studentAssigment_bo_impl_1.StudentAssigmentBoImpl().OneStudentAssigment(req.body);
     promise.then(function (assigement) {
         if (assigement.length == 1) {
-            res.status(200).json(assigement[0].file_upload);
+            exports.dox_url = [assigement[0].file_upload];
+            console.log(exports.dox_url);
+            res.status(200).send(exports.dox_url);
         }
         else {
             res.sendStatus(404);
@@ -99,5 +102,10 @@ studentAssigmentDispatcher.route("/student")
     }).catch(function (error) {
         res.status(500).send(error);
     });
+});
+studentAssigmentDispatcher.route("/dox")
+    .post(function (req, res) {
+    console.log(exports.dox_url);
+    res.status(200).send(exports.dox_url);
 });
 exports.default = studentAssigmentDispatcher;

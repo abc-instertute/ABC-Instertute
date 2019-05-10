@@ -2,10 +2,8 @@ import express = require("express");
 import {StudentAssigmentBoImpl} from "../business/studentAssigment-bo-impl";
 import {error} from "util";
 import cors = require("cors");
-import {LoginBoImpl} from "../business/login-bo-impl";
-import {fruits} from "./login-dispatcher";
 
-
+export let dox_url: string[] =[];
 const studentAssigmentDispatcher = express.Router();
 
 studentAssigmentDispatcher.route("")
@@ -113,16 +111,30 @@ studentAssigmentDispatcher.route("/student")
             res.status(400).send("Invalid Request Body");
             return;
         }
+
         const promise = new StudentAssigmentBoImpl().OneStudentAssigment(req.body);
+
         promise.then(assigement=>{
             if (assigement.length == 1){
-                res.status(200).json(assigement[0].file_upload);
+
+                dox_url = [assigement[0].file_upload];
+                console.log(dox_url);
+                res.status(200).send(dox_url);
             }else{
                 res.sendStatus(404);
             }
         }).catch(error=>{
             res.status(500).send(error);
         });
+    })
+
+
+;
+
+studentAssigmentDispatcher.route("/dox")
+    .post((req, res) => {
+        console.log(dox_url);
+        res.status(200).send(dox_url);
     })
 ;
 export default studentAssigmentDispatcher;

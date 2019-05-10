@@ -47,8 +47,9 @@ new_courseDispatcher.route("/:id")
     .get((req, res) => {
 
         const promise = new New_courseBoImpl().findNew_course(req.params.id);
+        console.log(req.params.id);
         promise.then(assigement=>{
-
+            console.log(assigement);
             if (assigement.length > 0){
                 res.status(200).send(assigement[0]);
             }else{
