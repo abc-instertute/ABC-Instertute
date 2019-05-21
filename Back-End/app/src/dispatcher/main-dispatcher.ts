@@ -1,7 +1,6 @@
 import express = require("express");
 import cors = require("cors");
 
-
 import assigmentDispatcher from "./assigment-dispatcher";
 import courseMaterialsDispatcher from "./course_materials-dispatcher";
 import lectureDispatcher from "./lecture-dispatcher";

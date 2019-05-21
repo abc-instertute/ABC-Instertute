@@ -110,7 +110,7 @@
 
 </head>
 
-<body>
+<body background="">
 
     <header class="default-header">
         <nav class="navbar navbar-expand-lg  navbar-light">
@@ -178,25 +178,25 @@
     <section class="testimonials-area ">
         <div class="container">
             <h1 style="text-align: center">
-                Course Detail
+                Course Information
             </h1>
             <br><br>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="panel panel-primary">
                         <div class="panel-heading" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">
-                            <h3 class="box-title">ADD Course</h3>
+                            <h3 class="box-title">Course Information Form</h3>
                         </div>
                         <br>
                         <div class="panel-body">
                             <form role="form">
                                 <div class="box-body">
-                                    <div class="form-group" >
+                                    <div class="form-group" style="text-align: center" >
                                         <img src="image.png" id="img-preview" style="width: 200px; height: 125px;" />
                                         <label class="file-upload-container" for="file-upload">
                                             <input id="file-upload" type="file" style="display:none;"></br>
-                                            <span>Select an Image</span>
+                                            <span class="text-muted">Select an Image</span>
                                         </label>
                                     </div>
                                     <div class="form-group">
@@ -217,55 +217,24 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="period" placeholder="Time period">
                                     </div>
-                                    <div class="form-group">Description
+                                    <div class="form-group text-muted">Description
                                         <div id="description" style="border: 1px solid #ced4da; border-radius: 5px;"
                                              class="round2" contenteditable="true" ></div>
                                     </div>
-                                    <div class="form-group">Course out come
+                                    <div class="form-group text-muted">Course out come
                                         <div id="outcome" contenteditable="true" class="round2" style="border: 1px solid #ced4da; border-radius: 5px;" ></div>
                                     </div>
-                                    <div class="form-group">Target Audience
+                                    <div class="form-group text-muted">Target Audience
                                         <div id="audience" class="round2" contenteditable="true"
                                              style="border: 1px solid #ced4da; border-radius: 5px;" >
                                         </div>
                                     </div>
-                                    <div class="box-footer" style="text-align: left">
-                                        <button type="reset" class="btn " style="width: 45%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);"><p style="color:white">Reset</p></button>
-                                        <button type="button" id="btnSave" class="btn btn-primary" style="width: 45%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);"><p style="color:white">ADD</p></button>
+                                    <div class="box-footer" style="text-align: center">
+                                        <button type="reset" class="btn text-white" style="width: 10%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">Reset</button>
+                                        <button type="button" class="btn text-white" id="btnSave "style="width: 10%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">ADD</button>
                                     </div>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <!-- general form elements -->
-                    <div class="panel panel-primary">
-                        <div class="panel-heading" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">
-                            <h3 class="box-title">Course Detail</h3>
-                        </div>
-                        <br>
-                        <div class="panel-body" style="overflow-y: auto; height: 715px;">
-                            <table id="myTable" class="table table-hover ">
-                                <thead>
-                                    <tr>
-                                        <th>Image</th>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Free</th>
-                                        <th>Seat</th>
-                                        <th>Schedule</th>
-                                        <th>Period</th>
-                                        <th>Description</th>
-                                        <th>Outcome</th>
-                                        <th>Audience</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
