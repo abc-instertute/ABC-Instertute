@@ -23,13 +23,13 @@ describe '#commas', ->
     Morris.commas(-1234567).should.equal("-1,234,567")
 
     # positive decimals
-    Morris.commas(1.2).should.equal("1.2")
+    Morris.commas(1.2).should.equal("1.sew.jpg")
     Morris.commas(12.34).should.equal("12.34")
     Morris.commas(123.456).should.equal("123.456")
     Morris.commas(1234.56).should.equal("1,234.56")
 
     # negative decimals
-    Morris.commas(-1.2).should.equal("-1.2")
+    Morris.commas(-1.2).should.equal("-1.sew.jpg")
     Morris.commas(-12.34).should.equal("-12.34")
     Morris.commas(-123.456).should.equal("-123.456")
     Morris.commas(-1234.56).should.equal("-1,234.56")

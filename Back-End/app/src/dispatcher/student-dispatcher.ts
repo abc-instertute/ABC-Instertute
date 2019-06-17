@@ -77,16 +77,16 @@ studentDispatcher.route("/:id")
 
     })
     .put((req, res) => {
-
+console.log("dsfsfsfddg")
         if (!("sid" in req.body && "fname" in req.body && "lname" in req.body && "bday" in req.body && "address" in req.body && "phone" in req.body && "email" in req.body && "password" in req.body )){
             res.status(400).send("Invalid Request Body");
             return;
         }
 
-        if (req.body.id !== req.params.id){
-            res.status(400).send("Mismatched student ID");
-            return;
-        }
+        // if (req.body.id !== req.params.id){
+        //     res.status(400).send("Mismatched student ID");
+        //     return;
+        // }
 
         const promise = new StudentBoImpl().updateStudent(req.body);
         promise.then(status=>{

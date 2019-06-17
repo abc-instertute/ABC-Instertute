@@ -155,6 +155,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" id="login" href="Login_page.html">Login</a>
                                 <a class="dropdown-item" id="logout">Logout</a>
+                                <a class="dropdown-item" id="view">Profile View</a>
                             </div>
                         </li>
                     </ul>
@@ -231,7 +232,7 @@
                                     </div>
                                     <div class="box-footer" style="text-align: center">
                                         <button type="reset" class="btn text-white" style="width: 10%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">Reset</button>
-                                        <button type="button" class="btn text-white" id="btnSave "style="width: 10%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">ADD</button>
+                                        <button type="button" class="btn text-white" id="btnSave"style="width: 10%; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);">ADD</button>
                                     </div>
                                 </div>
                             </form>
@@ -392,9 +393,11 @@
                 if(studentID != null){
                     $("#logout").show();
                     $("#login").hide();
+                    $("#view").show();
                 }else{
                     $("#login").show();
                     $("#logout").hide();
+                    $("#view").hide();
                 }
 
                 console.log(studentID);
@@ -417,6 +420,7 @@
                 $("#user_session").text(studentID);
                 $("#login").show();
                 $("#logout").hide();
+                $("#view").hide();
                 console.log(studentID);
                 alert("Log Out");
             }).fail(function(jxhr,statusText,error){
@@ -429,41 +433,7 @@
         <!--front end connector the back end using ajax-->
 
         $("#btnSave").click(function(){
-
-            if ($("#aid").attr("disabled")){
-
-                var assigment = {
-                    file_upload: uplodURL,
-                    id: $("#id").val(),
-                    name: $("#name").val(),
-                    free: $("#free").val(),
-                    seat: $("#seat").val(),
-                    schedule: $("#schedule").val(),
-                    period: $("#period").val(),
-                    description: $("#description").text(),
-                    outcome: $("#outcome").text(),
-                    audience: $("#audience").text()
-                };
-
-                var ajaxConfig = {
-                    method: "PUT",
-                    url: SERVER_URL + "/api/v1/newCourses/" + $("#id").val(),
-                    async: true,
-                    contentType: "application/json",
-                    data: JSON.stringify(assigment)
-                }
-
-                $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-                    alert("Updated Successfully");
-                    loadAllAssigment();
-                    $('button[type="reset"]').trigger("click");
-                }).fail(function(jxhr,statusText,error){
-                    alert("Unable to update the Course, try again");
-                    console.log(error);
-                });
-
-            }else{
-
+            console.log("sdfsfdsgdg");
                 var assigment = {
                     file_upload: uplodURL,
                     id: $("#id").val(),
@@ -479,7 +449,7 @@
 
                 var ajaxConfig = {
                     method: "POST",
-                    url: SERVER_URL + "/api/v1/newCourses/",
+                    url: SERVER_URL + "/api/v1/newCourses",
                     async: true,
                     contentType: "application/json",
                     data: JSON.stringify(assigment)
@@ -496,9 +466,6 @@
                     console.log(error);
                 });
 
-
-            }
-
         });
 
         $('button[type="reset"]').click(function(){
@@ -511,119 +478,12 @@
             $("#audience").text("  ");
         });
 
-        $(document).ready(function(){
 
-            loadAllAssigment();
+        $("#user_session").click(function(){
 
-        });
-
-        function loadAllAssigment(){
-
-            $("#myTable").dataTable().fnDestroy();
-            $("#myTable tbody tr").remove();
-
-            var ajaxConfig = {
-                method: "GET",
-                url:SERVER_URL + "/api/v1/newCourses",
-                async: true
-            };
-
-            $.ajax(ajaxConfig).done(function(assigments,statusText,jxhr){
-                console.log("cvd");
-                console.log(assigments);
-                assigments.forEach(function(assigment){
-                    // $("#image").attr("src",assigment.file_upload);
-                    var html = `<tr>
-                          <td><img id="image" src="${assigment.file_upload}" style="width: 50px; height: 50px;" /></td>
-                          <td>${assigment.id}</td>
-                          <td>${assigment.name}</td>
-                          <td>${assigment.free}</td>
-                          <td>${assigment.seat}</td>
-                          <td>${assigment.schedule}</td>
-                          <td>${assigment.period}</td>
-                          <td>${assigment.description}</td>
-                          <td>${assigment.outcome}</td>
-                          <td>${assigment.audience}</td>
-                          <td><button type="button" class="btn delete" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);"><p style="color:white">Delete</p></button></td>
-                       </tr>`;
-
-                    $("#myTable tbody").append(html);
-
-                    $("#myTable tbody tr").off("click");
-                    $("#myTable tbody tr").click(function(){
-                        $("#myTable tbody tr").removeClass("selected-row");
-                        $(this).addClass("selected-row");
-                        uplodURL = $(this).find("#image").attr('src');
-                        $("#img-preview").attr("src",uplodURL);
-                        $("#id").val($(this).find("td:nth-child(2)").text());
-                        $("#id").attr("disabled",true);
-                        $("#name").val($(this).find("td:nth-child(3)").text());
-                        $("#free").val($(this).find("td:nth-child(4)").text());
-                        $("#seat").val($(this).find("td:nth-child(5)").text());
-                        $("#schedule").val($(this).find("td:nth-child(6)").text());
-                        $("#period").val($(this).find("td:nth-child(7)").text());
-                        $("#description").text($(this).find("td:nth-child(8)").text());
-                        $("#outcome").text($(this).find("td:nth-child(9)").text());
-                        $("#audience").text($(this).find("td:nth-child(10)").text());
-
-
-                    });
-
-                    $("button.delete").off("click");
-                    $("button.delete").click(function(eventData){
-
-                        eventData.stopPropagation();
-
-                        var row = $(this).parents("tr");
-                        var assigmentId = (row.find("td:nth-child(2)").text());
-
-                        if (confirm("Are you sure to delete this assigment?")){
-
-                            var ajaxConfig = {
-                                method : "DELETE",
-                                url: SERVER_URL + "/api/v1/newCourses/" + assigmentId,
-                                async: true
-                            }
-
-                            $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-
-                                $(row).remove();
-
-                            }).fail(function(jxhr,statusText,error){
-
-                                console.log(jxhr.responseText);
-
-                            });
-
-                        }
-                    });
-
-                });
-
-                $('#myTable').DataTable({
-                    'paging'      : true,
-                    'lengthChange': false,
-                    'searching'   : true,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : true,
-                    'pageLength'  : 11,
-                    language: {
-                        search: "_INPUT_",
-                        searchPlaceholder: "Search Assigment..."
-                    }
-                });
-
-            }).fail(function(jxhr,statusText,error){
-                console.log(error);
-            });
-        }
-
-        $("body").mousemove(function(eventData){
-
-            $("#hs").text(v);
-            $("#hs").css("left",eventData.clientX+10+px);
-            $("#hs").css("top",eventData.clientY+10+px);
+            if(studentID != null){
+                window.location.href="http://localhost:63342/Dilrukshi/Front-End/studentProfileEdit.html";
+            }
         });
 
         <!--front end connector the back end using ajax-->

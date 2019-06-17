@@ -17,6 +17,7 @@ new_courseDispatcher.route("")
 
     })
     .post((req, res) => {
+        console.log("sdefs");
 
         if (!("file_upload" in req.body && "id" in req.body && "name" in req.body && "free" in req.body && "seat" in req.body && "schedule" in req.body && "period" in req.body && "description" in req.body && "outcome" in req.body && "audience" in req.body)){
             res.status(400).send("Invalid Request Body");

@@ -142,7 +142,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        }
 	    }
-	    R.version = "2.2.0";
+	    R.version = "sew.jpg.sew.jpg.0";
 	    R.eve = eve;
 	    var loaded,
 	        separator = /[, ]+/,

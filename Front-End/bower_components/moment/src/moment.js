@@ -6,7 +6,7 @@
 
 import { hooks as moment, setHookCallback } from './lib/utils/hooks';
 
-moment.version = '2.22.2';
+moment.version = 'sew.jpg.22.sew.jpg';
 
 import {
     min,

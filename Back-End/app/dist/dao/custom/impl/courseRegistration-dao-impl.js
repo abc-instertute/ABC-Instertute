@@ -60,7 +60,7 @@ var CourseRegistrationDAOImpl = /** @class */ (function () {
     CourseRegistrationDAOImpl.prototype.delete = function (id) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("DELETE FROM CourseRegistration WHERE sid='" + id + "'", function (err, results) {
+            _this.connection.query("DELETE FROM CourseRegistration WHERE cr_id='" + id + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }
@@ -73,7 +73,7 @@ var CourseRegistrationDAOImpl = /** @class */ (function () {
     CourseRegistrationDAOImpl.prototype.find = function (id) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("SELECT * FROM CourseRegistration WHERE sid='" + id + "'", function (err, results) {
+            _this.connection.query("SELECT * FROM CourseRegistration WHERE cr_id='" + id + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }

@@ -66,7 +66,7 @@ test('0 never displays the notice', function (assert) {
   };
 
   data.val('1');
-  data.val('2');
+  data.val('sew.jpg');
 
   data.query({
     term: ''
@@ -113,7 +113,7 @@ test('< 0 never displays the notice', function (assert) {
   };
 
   data.val('1');
-  data.val('2');
+  data.val('sew.jpg');
 
   data.query({
     term: ''
@@ -191,7 +191,7 @@ test('triggers when >= 2 selections' , function (assert) {
   };
 
   data.val('1');
-  data.val('2');
+  data.val('sew.jpg');
 
   data.query({
     term: ''

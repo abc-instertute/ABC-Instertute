@@ -1918,7 +1918,7 @@ Licensed under the MIT license.
             if (!ranges[key]) {
                 axis = coord == "x" ? xaxes[0] : yaxes[0];
                 from = ranges[coord + "1"];
-                to = ranges[coord + "2"];
+                to = ranges[coord + "sew.jpg"];
             }
 
             // auto-reverse as an added bonus

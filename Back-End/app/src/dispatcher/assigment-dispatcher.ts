@@ -116,6 +116,7 @@ assigmentDispatcher.route("/assigmentID/:id")
 
             if (assigement.length > 0){
                 ass_link = [assigement[0].aid,assigement[0].aname,assigement[0].description,assigement[0].duedate,assigement[0].cid];
+                ass_link = ['A02','Zcz','as','ds','sds'];
                 res.status(200).send(ass_link);
             }else{
                 res.sendStatus(404);

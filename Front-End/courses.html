@@ -132,6 +132,7 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" id="login" href="Login_page.html">Login</a>
               <a class="dropdown-item" id="logout">Logout</a>
+              <a class="dropdown-item" id="View">Profile View</a>
             </div>
           </li>
         </ul>
@@ -328,6 +329,7 @@
 
               $.ajax(ajaxConfig).done(function(assigments,statusText,jxhr){
                 console.log(assigments);
+                window.location.href="http://localhost:63342/Dilrukshi/Front-End/course-details.html";
               }).fail(function(jxhr,statusText,error){
                 console.log(error);
               });
@@ -351,9 +353,11 @@
         if(studentID != null){
           $("#logout").show();
           $("#login").hide();
+          $("#view").show();
         }else{
           $("#login").show();
           $("#logout").hide();
+          $("#view").hide();
         }
 
       }).fail(function(jxhr,statusText,error){
@@ -374,6 +378,7 @@
         $("#user_session").text(studentID);
         $("#login").show();
         $("#logout").hide();
+        $("#view").hide();
         console.log(studentID);
         alert("Log Out");
       }).fail(function(jxhr,statusText,error){
@@ -382,6 +387,12 @@
       });
     });
 
+    $("#view").click(function(){
+
+      if(studentID != null){
+        window.location.href="http://localhost:63342/Dilrukshi/Front-End/studentProfileEdit.html";
+      }
+    });
 
 
   </script>

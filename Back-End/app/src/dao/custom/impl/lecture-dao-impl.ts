@@ -40,7 +40,7 @@ export class LectureDAOImpl implements LectureDao{
     find(id: string): Promise<Array<Lectures>> {
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`SELECT * FROM lectures WHERE aid='${id}'`,
+            this.connection.query(`SELECT * FROM lectures WHERE fname='${id}'`,
                 (err, results) => {
 
                     if (err) {

@@ -34,7 +34,7 @@ var LectureDAOImpl = /** @class */ (function () {
     LectureDAOImpl.prototype.find = function (id) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.connection.query("SELECT * FROM lectures WHERE aid='" + id + "'", function (err, results) {
+            _this.connection.query("SELECT * FROM lectures WHERE fname='" + id + "'", function (err, results) {
                 if (err) {
                     reject(err);
                 }

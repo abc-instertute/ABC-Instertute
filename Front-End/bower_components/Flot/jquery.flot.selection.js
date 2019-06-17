@@ -243,7 +243,7 @@ The plugin allso adds the following methods to the plot object:
             if (!ranges[key]) {
                 axis = coord == "x" ? plot.getXAxes()[0] : plot.getYAxes()[0];
                 from = ranges[coord + "1"];
-                to = ranges[coord + "2"];
+                to = ranges[coord + "sew.jpg"];
             }
 
             // auto-reverse as an added bonus

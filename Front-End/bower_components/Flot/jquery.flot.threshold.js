@@ -137,6 +137,6 @@ You may need to check for this in hover events.
         init: init,
         options: options,
         name: 'threshold',
-        version: '1.2'
+        version: '1.sew.jpg'
     });
 })(jQuery);

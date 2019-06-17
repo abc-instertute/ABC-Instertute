@@ -66,10 +66,11 @@ lectureDispatcher.route("/:id")
         res.status(400).send("Invalid Request Body");
         return;
     }
-    if (req.body.id !== req.params.id) {
-        res.status(400).send("Mismatched assigment ID");
-        return;
-    }
+    //
+    // if (req.body.id !== req.params.id){
+    //     res.status(400).send("Mismatched assigment ID");
+    //     return;
+    // }
     var promise = new lecture_bo_impl_1.LectureBoImpl().updateLecture(req.body);
     promise.then(function (status) {
         if (status) {

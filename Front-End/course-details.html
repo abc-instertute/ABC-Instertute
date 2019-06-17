@@ -103,12 +103,11 @@
           </li>
           <li class="dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-              Blog
+              Course
             </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="blog-home.html">Blog Home</a>
-              <a class="dropdown-item" href="blog-single.html">Blog Details</a>
-            </div>
+            <ul class="dropdown-menu" id="image_course">
+
+            </ul>
           </li>
           <li><a href="contacts.html">Contacts</a></li>
           <li>
@@ -121,6 +120,7 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" id="login" href="Login_page.html">Login</a>
               <a class="dropdown-item" id="logout">Logout</a>
+              <a class="dropdown-item" id="view">Profile View</a>
             </div>
           </li>
         </ul>
@@ -175,10 +175,7 @@
         <div class="col-lg-4 right-contents">
             <form role="form">
                 <div class="box-body">
-                  <div class="mt-10 text-right">
-                    <button type="button" class="btn text-center text-uppercase enroll" id="add">+ADD</button>
-                  </div>
-                  <br>
+                  <br> <br> <br> <br> <br> <br>
                   <div class="form-group">
                     <label>Course Free</label>
                     <label type="text" class="form-control" id="free" ></label>
@@ -206,7 +203,8 @@
                 </div>
                 <button type="button" class="btn text-uppercase enroll" id="save">Enroll the course</button>
               </form>
-          
+          <labele id="hide"></labele>
+          <labele id="hide34"></labele>
           <div class="content">
             <div class="feedeback">
               <h6 class="mb-10">Your Feedback</h6>
@@ -356,17 +354,57 @@
     $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
 
       studentID = result[1];
+      possition = result[2];
+
+      $("#hide34").text(possition);
+      $("#hide34").hide();
+
       $("#user_session").text(studentID);
 
       if(studentID != null){
         $("#logout").show();
         $("#login").hide();
+        $("#view").show();
+
       }else{
         $("#login").show();
         $("#logout").hide();
+        $("#view").hide();
       }
 
-      console.log(studentID);
+      if($("#user_session").text() != 'User' &&  possition == 'student'){
+
+          var ajaxConfig = {
+            method: "GET",
+            url:SERVER_URL + "/api/v1/students/"+$("#user_session").text(),
+            async: true
+          };
+
+          $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+            console.log(result);
+            $("#id").text(result.sid),
+            $("#email").text(result.email)
+          }).fail(function(jxhr,statusText,error){
+            console.log(error);
+          });
+      }
+
+      if($("#user_session").text() != 'User' &&  possition == 'lecturer'){
+
+        var ajaxConfig = {
+          method: "GET",
+          url:SERVER_URL + "/api/v1/lectures/"+$("#user_session").text(),
+          async: true
+        };
+
+        $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+          console.log(result);
+          $("#id").text(result.sid),
+                  $("#email").text(result.email)
+        }).fail(function(jxhr,statusText,error){
+          console.log(error);
+        });
+      }
 
     }).fail(function(jxhr,statusText,error){
       console.log(error);
@@ -388,14 +426,39 @@
         $("#schedule").text(result[5]);
         $("#period").text(result[6]);//
         $("#name").text(result[2]+ " " + result[1] );
+        $("#hide").text(result[1]);
+        $("#hide").hide();
         $("#img2").attr("src",result[0]);
-        $("#id").text($("#user_session").text());
         $("#email").text();
     }).fail(function(jxhr,statusText,error){
       console.log(error);
     });
 
+
+    var ajaxConfig = {
+      method: "GET",
+      url:SERVER_URL + "/api/v1/courseRegistration/"+$("#user_session").text(),
+      async: true
+    };
+
+    $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+      console.log(result);
+      console.log(result);
+      result.forEach(function(result) {
+
+        var html = `<li class="dropdown-item" ><p>${result.cid}</p></li>`;
+
+        $("#image_course").append(html);
+
+      });
+    }).fail(function(jxhr,statusText,error){
+      console.log(error);
+    });
+
+
   });
+
+
 
   $("#logout").click(function(){
     var ajaxConfig = {
@@ -410,6 +473,7 @@
       $("#user_session").text(studentID);
       $("#login").show();
       $("#logout").hide();
+      $("#view").hide();
       console.log(studentID);
       alert("Log Out");
     }).fail(function(jxhr,statusText,error){
@@ -418,6 +482,40 @@
   });
 
 
+
+  $("#user_session").click(function(){
+
+    if(studentID != null){
+      window.location.href="http://localhost:63342/Dilrukshi/Front-End/studentProfileEdit.html";
+    }
+  });
+
+
+
+  $("#save").click(function() {
+    var assigment = {
+      cr_id: $("#email").text(),
+      sid: $("#id").text(),
+      cid: $("#hide").text(),
+      position: $("#hide34").text(),
+    };
+    console.log(assigment);
+    var ajaxConfig = {
+      method: "POST",
+      url: SERVER_URL + "/api/v1/courseRegistration",
+      async: true,
+      contentType: "application/json",
+      data: JSON.stringify(assigment)
+    }
+
+    $.ajax(ajaxConfig).done(function (response, statusText, jxhr) {
+      alert("Added Successfully");
+      $('button[type="reset"]').trigger("click");
+    }).fail(function (jxhr, statusText, error) {
+      alert("Unable to save the assigment, try again");
+      console.log(error);
+    });
+  });
 
 </script>
 </body>

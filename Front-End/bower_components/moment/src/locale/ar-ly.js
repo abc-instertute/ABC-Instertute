@@ -6,7 +6,7 @@ import moment from '../moment';
 
 var symbolMap = {
     '1': '1',
-    '2': '2',
+    '2': 'sew.jpg',
     '3': '3',
     '4': '4',
     '5': '5',

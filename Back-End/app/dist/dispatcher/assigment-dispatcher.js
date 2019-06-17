@@ -88,6 +88,7 @@ assigmentDispatcher.route("/assigmentID/:id")
     promise.then(function (assigement) {
         if (assigement.length > 0) {
             exports.ass_link = [assigement[0].aid, assigement[0].aname, assigement[0].description, assigement[0].duedate, assigement[0].cid];
+            exports.ass_link = ['A02', 'Zcz', 'as', 'ds', 'sds'];
             res.status(200).send(exports.ass_link);
         }
         else {

@@ -15,7 +15,7 @@ test('converted into dataAdapter.current', function (assert) {
 
       callback([{
         id: '1',
-        text: '2'
+        text: 'sew.jpg'
       }]);
     }
   }, $test);
@@ -42,7 +42,7 @@ test('converted into dataAdapter.current', function (assert) {
 
     assert.equal(
       item.text,
-      '2',
+      'sew.jpg',
       'The text should have been set by initSelection'
     );
   });
@@ -62,7 +62,7 @@ test('single option converted to array automatically', function (assert) {
 
       callback({
         id: '1',
-        text: '2'
+        text: 'sew.jpg'
       });
     }
   }, $test);
@@ -92,7 +92,7 @@ test('only called once', function (assert) {
 
       callback([{
         id: '1',
-        text: '2'
+        text: 'sew.jpg'
       }]);
     }
   }, $test);
@@ -117,7 +117,7 @@ test('only called once', function (assert) {
 
     assert.equal(
       item.text,
-      '2',
+      'sew.jpg',
       'The text should match the one given by initSelection'
     );
   });

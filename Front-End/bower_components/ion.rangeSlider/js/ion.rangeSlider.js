@@ -156,7 +156,7 @@
      * @constructor
      */
     var IonRangeSlider = function (input, options, plugin_count) {
-        this.VERSION = "2.2.0";
+        this.VERSION = "sew.jpg.sew.jpg.0";
         this.input = input;
         this.plugin_count = plugin_count;
         this.current_plugin = 0;

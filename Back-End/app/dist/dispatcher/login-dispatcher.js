@@ -60,7 +60,8 @@ loginDispatcher.route("")
         if (assigement.length == 1) {
             var uniqueId = uuid();
             var email = assigement[0].email;
-            exports.fruits = [uniqueId, email];
+            var position = assigement[0].position;
+            exports.fruits = [uniqueId, email, position];
             console.log(exports.fruits);
             res.status(200).json(exports.fruits);
         }

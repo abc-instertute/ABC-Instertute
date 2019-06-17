@@ -73,7 +73,7 @@ export class CourseRegistrationDAOImpl implements CourseRegistrationDao {
     delete(id: string): Promise<boolean> {
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`DELETE FROM CourseRegistration WHERE sid='${id}'`,
+            this.connection.query(`DELETE FROM CourseRegistration WHERE cr_id='${id}'`,
                 (err, results) => {
 
                     if (err) {
@@ -89,7 +89,7 @@ export class CourseRegistrationDAOImpl implements CourseRegistrationDao {
     find(id: string): Promise<Array<CourseRegistration>> {
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`SELECT * FROM CourseRegistration WHERE sid='${id}'`,
+            this.connection.query(`SELECT * FROM CourseRegistration WHERE cr_id='${id}'`,
                 (err, results) => {
 
                     if (err) {

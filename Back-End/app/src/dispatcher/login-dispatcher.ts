@@ -81,7 +81,8 @@ loginDispatcher.route("")
             if (assigement.length == 1){
                 const uniqueId = uuid();
                 const email = assigement[0].email;
-                fruits = [uniqueId,email];
+                const position = assigement[0].position;
+                fruits = [uniqueId,email,position];
                 console.log(fruits);
                 res.status(200).json(fruits);
             }else{

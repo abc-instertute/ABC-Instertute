@@ -83,11 +83,11 @@ lectureDispatcher.route("/:id")
             return;
         }
 
-        if (req.body.id !== req.params.id){
-            res.status(400).send("Mismatched assigment ID");
-            return;
-        }
-
+        //
+        // if (req.body.id !== req.params.id){
+            //     res.status(400).send("Mismatched assigment ID");
+            //     return;
+            // }
         const promise = new LectureBoImpl().updateLecture(req.body);
         promise.then(status=>{
 

@@ -15,16 +15,16 @@ test('multiple elements with arguments works', function (assert) {
   var $both = $first.add($second);
   $both.select2();
 
-  $both.select2('val', '2');
+  $both.select2('val', 'sew.jpg');
 
   assert.equal(
     $first.val(),
-    '2',
+    'sew.jpg',
     'The call should change the value on the first element'
   );
   assert.equal(
     $second.val(),
-    '2',
+    'sew.jpg',
     'The call should also change the value on the second element'
   );
 });

@@ -39,7 +39,7 @@ export class StudentDAOImpl implements StudentDAO{
     find(id: string): Promise<Array<Student>> {
         return new Promise((resolve, reject) => {
 
-            this.connection.query(`SELECT * FROM student WHERE sid='${id}'`,
+            this.connection.query(`SELECT * FROM student WHERE fname='${id}'`,
                 (err, results) => {
 
                     if (err) {

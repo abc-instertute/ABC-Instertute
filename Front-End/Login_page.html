@@ -119,15 +119,6 @@
                 <span class="lnr lnr-magnifier" id="search"></span>
               </button>
             </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                User
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" >Login</a>
-                <a class="dropdown-item" >Logout</a>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
@@ -145,9 +136,10 @@
   <section style="height: 100px; background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%)">
   </section>
 <br><br>
-  <section class="testimonials-area ">
+  <section class="testimonials-area " style="margin-left: 200px;margin-right: 200px;margin-bottom: 200px;margin-top: 100px;">
     <div class="container">
-      <div class="login-box-body box box-danger" style=" box-shadow: 5px 5px 4px #888888; padding: 5px;" >
+      <div class="col-md-3"></div>
+      <div class="login-box-body box box-danger col-md-6" style=" box-shadow: 5px 5px 4px #888888; padding: 5px;" >
         <br>
         <h3>Login Page </h3><br>
         <form >
@@ -159,15 +151,14 @@
             <input type="password" name="password" id="password" class="form-control " placeholder="Password">
           </div>
           <div class="form-group has-feedback" >
-            <select name="Position"class="form-control" style="border-color: black">
+            <select name="Position"class="form-control" style="border-color: black" id="Position">
               <option value="Student" >Student</option>
-              <option value="Lecture" >Lecture</option>
+              <option value="lecturer" >lecturer</option>
             </select>
           </div>
-          <br>
-          <br>
+
           <div class="">
-            <button type="button" class="btn btn-primary btn-block btn-flat" name="Complete">Login</button>
+            <button type="button" class="btn btn-primary btn-block btn-flat" name="Complete" id="btnSave">Login</button>
           </div>
           <br>
           <div class="bottom-container">
@@ -186,8 +177,6 @@
     </div>
   </section>
 
-  <br>
-  <br>
   <footer class="section-gap" style="height: 350px; background: linear-gradient(to bottom, #030a1d 88%, #6600cc 126%)">
     <div class="container">
       <div class="row">
@@ -292,174 +281,39 @@
     <!--front end connector the back end using ajax-->
     var SERVER_URL = "http://localhost:3020";
 
-    $("#btnSave").click(function(){
 
-      if ($("#aid").attr("disabled")){
+    $("#btnSave").click(function() {
 
-        var assigment = {
-          aid: $("#aid").val(),
-          cid: $("#cid").val(),
-          aname: $("#aname").val(),
-          description: $("#description").text(),
-          duedate: $("#duedate").val()
-        };
-
-        var ajaxConfig = {
-          method: "PUT",
-          url: SERVER_URL + "/api/v1/assigments/" + $("#aid").val(),
-          async: true,
-          contentType: "application/json",
-          data: JSON.stringify(assigment)
-        }
-
-        $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-          alert("Updated Successfully");
-          loadAllAssigment();
-          $('button[type="reset"]').trigger("click");
-        }).fail(function(jxhr,statusText,error){
-          alert("Unable to update the assigment, try again");
-          console.log(error);
-        });
-
-      }else{
-
-        var assigment = {
-          aid: $("#aid").val(),
-          cid: $("#cid").val(),
-          aname: $("#aname").val(),
-          description: $("#description").text(),
-          duedate: $("#duedate").val()
-        };
-
-        var ajaxConfig = {
-          method: "POST",
-          url: SERVER_URL + "/api/v1/assigments/",
-          async: true,
-          contentType: "application/json",
-          data: JSON.stringify(assigment)
-        }
-
-        $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-          alert("Added Successfully");
-          loadAllAssigment();
-          $('button[type="reset"]').trigger("click");
-        }).fail(function(jxhr,statusText,error){
-          alert("Unable to save the assigment, try again");
-          console.log(error);
-        });
-
-
-      }
-
-    });
-
-    $('button[type="reset"]').click(function(){
-      $("#myTable tbody tr").removeClass("selected-row");
-      $("#aid").attr("disabled",false);
-    });
-
-    $(document).ready(function(){
-
-      loadAllAssigment();
-
-    });
-
-    function loadAllAssigment(){
-
-      $("#myTable").dataTable().fnDestroy();
-      $("#myTable tbody tr").remove();
-
-      var ajaxConfig = {
-        method: "GET",
-        url:SERVER_URL + "/api/v1/assigments",
-        async: true
+      var assigment = {
+        email: $("#username").val(),
+        password: $("#password").val(),
+        position: $("option:selected").val(),
       };
 
-      $.ajax(ajaxConfig).done(function(assigments,statusText,jxhr){
-        console.log(assigments);
-        assigments.forEach(function(assigment){
+      var ajaxConfig = {
+        method: "POST",
+        url: SERVER_URL + "/api/v1/login",
+        async: true,
+        contentType: "application/json",
+        data: JSON.stringify(assigment)
+      }
 
-          var html = `<tr>
-                          <td>${assigment.aid}</td>
-                          <td>${assigment.cid}</td>
-                          <td>${assigment.aname}</td>
-                          <td>${assigment.description}</td>
-                          <td>${assigment.duedate}</td>
-                          <td><button type="button" class="btn delete" style="background: linear-gradient(to bottom, #6600cc 78%, #ffffff 126%);"><p style="color:white">Delete</p></button></td>
-                       </tr>`;
-
-          $("#myTable tbody").append(html);
-
-          $("#myTable tbody tr").off("click");
-          $("#myTable tbody tr").click(function(){
-            $("#myTable tbody tr").removeClass("selected-row");
-            $(this).addClass("selected-row");
-
-            $("#aid").val($(this).find("td:first-child").text());
-            $("#aid").attr("disabled",true);
-            $("#cid").val($(this).find("td:nth-child(2)").text());
-            $("#aname").val($(this).find("td:nth-child(3)").text());
-            $("#description").text($(this).find("td:nth-child(4)").text());
-            $("#duedate").val($(this).find("td:nth-child(5)").text());
-
-          });
-
-          $("button.delete").off("click");
-          $("button.delete").click(function(eventData){
-
-            eventData.stopPropagation();
-
-            var row = $(this).parents("tr");
-            var assigmentId = (row.find("td:first-child").text());
-
-            if (confirm("Are you sure to delete this assigment?")){
-
-              var ajaxConfig = {
-                method : "DELETE",
-                url: SERVER_URL + "/api/v1/assigments/" + assigmentId,
-                async: true
-              }
-
-              $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-
-                $(row).remove();
-
-              }).fail(function(jxhr,statusText,error){
-
-                console.log(jxhr.responseText);
-
-              });
-
-            }
-          });
-
-        });
-
-        $('#myTable').DataTable({
-          'paging'      : true,
-          'lengthChange': false,
-          'searching'   : true,
-          'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : true,
-          'pageLength'  : 6,
-          language: {
-            search: "_INPUT_",
-            searchPlaceholder: "Search Assigment..."
-          }
-        });
-
-      }).fail(function(jxhr,statusText,error){
+      $.ajax(ajaxConfig).done(function (response, statusText, jxhr) {
+        window.location.href="http://localhost:63342/Dilrukshi/Front-End/studentProfileEdit.html";
+      }).fail(function (jxhr, statusText, error) {
+        alert("Unable to Login, try again");
         console.log(error);
       });
-    }
+
+
+    });
+
+
 
     <!--front end connector the back end using ajax-->
 
   </script>
 
 </body>
-
-<!-- Mirrored from colorlib.com/preview/theme/eclipse/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Feb 2019 15:42:10 GMT -->
 
 </html>

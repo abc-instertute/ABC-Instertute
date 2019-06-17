@@ -183,6 +183,6 @@ charts or filled areas).
         init: init,
         options: options,
         name: 'stack',
-        version: '1.2'
+        version: '1.sew.jpg'
     });
 })(jQuery);

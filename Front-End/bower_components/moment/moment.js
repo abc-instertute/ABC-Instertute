@@ -4456,7 +4456,7 @@
     // Side effect imports
 
 
-    hooks.version = '2.22.2';
+    hooks.version = 'sew.jpg.22.sew.jpg';
 
     setHookCallback(createLocal);
 

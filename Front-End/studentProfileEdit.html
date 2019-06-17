@@ -61,20 +61,18 @@
                                 <a class="dropdown-item" href="course-details.html">EditProfile</a>
                             </div>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                                Blog
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="blog-home.html">Blog Home</a>
-                                <a class="dropdown-item" href="blog-single.html">Blog Details</a>
-                            </div>
-                        </li>
                         <li><a href="contacts.html">Contacts</a></li>
                         <li>
                             <button class="search">
                                 <span class="lnr lnr-magnifier" id="search"></span>
                             </button>
+                        </li>
+                        <li class="dropdown" style="margin-left: 100px">
+                            <div class="dropdown-toggle" id="user_session" data-toggle="dropdown" style="color: white; margin-left: 20px;" > User</div>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" id="login" href="Login_page.html">Login</a>
+                                <a class="dropdown-item" id="logout">Logout</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -109,17 +107,9 @@
     <section class="course-details-area ">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 right-contents">
+                    <div class="col-lg-12 right-contents">
                         <form role="form">
                             <div class="box-body">
-
-                                <div class="form-group" >
-                                    <img src="image.png" id="img-preview" style="width: 200px; height: 125px;" />
-                                    <label class="file-upload-container" for="file-upload">
-                                        <input id="file-upload" type="file" style="display:none;"></br>
-                                        <span>Select an Image</span>
-                                    </label>
-                                </div>
                                 <div class="form-group">
                                     <label>Student ID </label>
                                     <input type="text" class="form-control" id="sid">
@@ -132,6 +122,15 @@
                                     <label>Last Name </label>
                                     <input type="text" class="form-control" id="lname">
                                 </div>
+
+                                <div class="form-group" >
+                                    <select name="Position" class="form-control" style="border-color: black;" id="Position">
+                                        <option value="Student" >Student</option>
+                                        <option value="Lecture" >Lecture</option>
+                                    </select>
+                                </div>
+
+<br><br>
                                 <div class="form-group">
                                     <label>Birthday </label>
                                     <input type="date" class="form-control" id="bday">
@@ -153,40 +152,13 @@
                                     <label>Password</label>
                                     <input type="text" class="form-control" id="password">
                                 </div>
-                                <div class="form-group">
-                                    <label>Comfirm Password</label>
-                                    <input type="text" class="form-control" id="cpassword">
-                                </div>
 
                                 <div class="box-footer" style="text-align: left">
                                     <button type="reset" class="btn btn-primary" style="width: 45%;">Reset</button>
                                     <button type="button" id="btnSave" class="btn btn-primary" style="width: 45%;">ADD</button>
                                 </div>
-
+                                <label id="option"></label>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4 left-contents">
-                        <div class="box-header with-border">
-                            <h2 style="margin-bottom: 8px;">Change password</h2>
-                        </div>
-                        <br>
-                        <form role="form">
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label>Current Password</label>
-                                    <input type="text" class="form-control" id="textTimePeriod1">
-                                </div>
-                                <div class="form-group">
-                                    <label>New Password</label>
-                                    <input type="text" class="form-control" id="textTimePeriod2">
-                                </div>
-                                <div class="form-group">
-                                    <label>Comfirm Password</label>
-                                    <input type="text" class="form-control" id="textTimePeriod3">
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-primary" style="width: 100%" id="save1">Change The Password</button>
                         </form>
                     </div>
                 </div>
@@ -288,31 +260,6 @@
     <script>
         // API image uploder
         var SERVER_URL = "http://localhost:3020";
-        var cloud_URL = "https://api.cloudinary.com/v1_1/sewwandi/image/upload";
-        var  cloud_uploder_Key ="ln4ub25f";
-        var uplodURL;
-        $("#file-upload").on("change",function (e) {
-
-            var f =e.target.files[0];
-            var formatData = new FormData();
-            formatData.append('file',f);
-            formatData.append('upload_preset',cloud_uploder_Key);
-            axios({
-                url:cloud_URL,
-                method:"POST",
-                headers :{
-                    'Content-Type':'application/x-www-form-urlencoded'
-                },
-                data:formatData
-            }).then(function (res) {
-                console.log(res);
-                uplodURL = res.data.secure_url;
-                $("#img-preview").attr("src",uplodURL);
-            }).catch(function (err) {
-                console.log(err);
-            });
-
-        });
         // API image uploder
         <!--footer-->
         window.dataLayer = window.dataLayer || [];
@@ -323,76 +270,133 @@
         <!--footer-->
 
         <!--front end connector the back end using ajax-->
+        var studentID = $("#user_session").text();
+        var  possition = $("#option").text();
+        $("#btnSave").click(function() {
 
-        $("#btnSave").click(function(){
+            if($('Save' == "#btnSave").text()) {
 
-            // if ($("#sid").attr("disabled")){
-            //
-            //     var student = {
-            //         file_upload: uplodURL,
-            //         sid: $("#sid").val(),
-            //         fname: $("#fname").val(),
-            //         lname: $("#lname").val(),
-            //         bday: $("#bday").val(),
-            //         address: $("#address").val(),
-            //         phone: $("#phone").val(),
-            //         email: $("#email").text(),
-            //         password: $("#password").text()
-            //     };
-            //
-            //     var ajaxConfig = {
-            //         method: "PUT",
-            //         url: SERVER_URL + "/api/v1/students" + $("#id").val(),
-            //         async: true,
-            //         contentType: "application/json",
-            //         data: JSON.stringify(assigment)
-            //     }
-            //
-            //     $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-            //         alert("Updated Successfully");
-            //         loadAllAssigment();
-            //         $('button[type="reset"]').trigger("click");
-            //     }).fail(function(jxhr,statusText,error){
-            //         alert("Unable to update the Course, try again");
-            //         console.log(error);
-            //     });
-            //
-            // }else{
+                if ('Student' == $("option:selected").val()) {
 
-                var student = {
-                    file_upload: uplodURL,
-                    sid: $("#sid").val(),
-                    fname: $("#fname").val(),
-                    lname: $("#lname").val(),
-                    bday: $("#bday").val(),
-                    address: $("#address").text(),
-                    phone: $("#phone").val(),
-                    email: $("#email").val(),
-                    password: $("#password").val()
-                };
 
-                var ajaxConfig = {
-                    method: "POST",
-                    url: SERVER_URL + "/api/v1/students",
-                    async: true,
-                    contentType: "application/json",
-                    data: JSON.stringify(student)
+                    var student = {
+                        sid: $("#sid").val(),
+                        fname: $("#fname").val(),
+                        lname: $("#lname").val(),
+                        bday: $("#bday").val(),
+                        address: $("#address").text(),
+                        phone: $("#phone").val(),
+                        email: $("#email").val(),
+                        password: $("#password").val()
+                    };
+
+                    var ajaxConfig = {
+                        method: "POST",
+                        url: SERVER_URL + "/api/v1/students",
+                        async: true,
+                        contentType: "application/json",
+                        data: JSON.stringify(student)
+                    }
+
+                    $.ajax(ajaxConfig).done(function (response, statusText, jxhr) {
+                        alert("Added Successfully");
+                        $('button[type="reset"]').trigger("click");
+                    }).fail(function (jxhr, statusText, error) {
+                        alert("Unable to save the course, try again");
+                        console.log(error);
+                    });
+
+                } else {
+                    var lec = {
+                        sid: $("#sid").val(),
+                        fname: $("#fname").val(),
+                        lname: $("#lname").val(),
+                        position: $("option:selected").val(),
+                        bday: $("#bday").val(),
+                        address: $("#address").text(),
+                        phone: $("#phone").val(),
+                        email: $("#email").val(),
+                        password: $("#password").val()
+                    };
+
+                    var ajaxConfig = {
+                        method: "POST",
+                        url: SERVER_URL + "/api/v1/lectures",
+                        async: true,
+                        contentType: "application/json",
+                        data: JSON.stringify(lec)
+                    }
+
+                    $.ajax(ajaxConfig).done(function (response, statusText, jxhr) {
+                        alert("Added Successfully");
+                        $('button[type="reset"]').trigger("click");
+                    }).fail(function (jxhr, statusText, error) {
+                        alert("Unable to save the course, try again");
+                        console.log(error);
+                    });
                 }
-
-                $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-                    alert("Added Successfully");
-                    uplodURL="image.png";
-                    $("#img-preview").attr("src",uplodURL);
-                    loadAllAssigment();
-                    $('button[type="reset"]').trigger("click");
-                }).fail(function(jxhr,statusText,error){
-                    alert("Unable to save the course, try again");
-                    console.log(error);
-                });
+            }
+            else {
+                if ('Student' == $("option:selected").val()) {
 
 
-            // }
+                    var student = {
+                        sid: $("#sid").val(),
+                        fname: $("#fname").val(),
+                        lname: $("#lname").val(),
+                        bday: $("#bday").val(),
+                        address: $("#address").text(),
+                        phone: $("#phone").val(),
+                        email: $("#email").val(),
+                        password: $("#password").val()
+                    };
 
+                    var ajaxConfig = {
+                        method: "PUT",
+                        url: SERVER_URL + "/api/v1/students/"+ $("#sid").val(),
+                        async: true,
+                        contentType: "application/json",
+                        data: JSON.stringify(student)
+                    }
+
+                    $.ajax(ajaxConfig).done(function (response, statusText, jxhr) {
+                        alert("Added Successfully");
+                        $('button[type="reset"]').trigger("click");
+                    }).fail(function (jxhr, statusText, error) {
+                        alert("Unable to update the course, try again");
+                        console.log(error);
+                    });
+
+                } else {
+                    var lec = {
+                        sid: $("#sid").val(),
+                        fname: $("#fname").val(),
+                        lname: $("#lname").val(),
+                        position: $("option:selected").val(),
+                        bday: $("#bday").val(),
+                        address: $("#address").text(),
+                        phone: $("#phone").val(),
+                        email: $("#email").val(),
+                        password: $("#password").val()
+                    };
+
+                    var ajaxConfig = {
+                        method: "PUT",
+                        url: SERVER_URL + "/api/v1/lectures" + $("#sid").val(),
+                        async: true,
+                        contentType: "application/json",
+                        data: JSON.stringify(lec)
+                    }
+
+                    $.ajax(ajaxConfig).done(function (response, statusText, jxhr) {
+                        alert("Added Successfully");
+                        $('button[type="reset"]').trigger("click");
+                    }).fail(function (jxhr, statusText, error) {
+                        alert("Unable to save the course, try again");
+                        console.log(error);
+                    });
+                }
+            }
         });
 
         $('button[type="reset"]').click(function(){
@@ -403,113 +407,108 @@
             $("#address").text("  ");
         });
 
-        // $(document).ready(function(){
-        //
-        //     loadAllAssigment();
-        //
-        // });
 
-        // function loadAllAssigment(){
-        //     //
-        //     // $("#myTable").dataTable().fnDestroy();
-        //     // $("#myTable tbody tr").remove();
-        //
-        //     var ajaxConfig = {
-        //         method: "GET",
-        //         url:SERVER_URL + "/api/v1/students",
-        //         async: true
-        //     };
-        //
-        //     $.ajax(ajaxConfig).done(function(assigments,statusText,jxhr){
-        //         console.log("cvd");
-        //         console.log(assigments);
-        //         assigments.forEach(function(assigment){
-        //
-        //             var html = `<tr>
-        //                   <td>${assigment.file_upload}</td>
-        //                   <td>${assigment.id}</td>
-        //                   <td>${assigment.name}</td>
-        //                   <td>${assigment.free}</td>
-        //                   <td>${assigment.seat}</td>
-        //                   <td>${assigment.schedule}</td>
-        //                   <td>${assigment.period}</td>
-        //                   <td>${assigment.description}</td>
-        //                   <td>${assigment.outcome}</td>
-        //                   <td>${assigment.audience}</td>
-        //                   <td><button type="button" class="btn btn-success delete">Delete</button></td>
-        //                </tr>`;
-        //
-        //             $("#myTable tbody").append(html);
-        //
-        //             $("#myTable tbody tr").off("click");
-        //             $("#myTable tbody tr").click(function(){
-        //                 $("#myTable tbody tr").removeClass("selected-row");
-        //                 $(this).addClass("selected-row");
-        //                 uplodURL = $(this).find("td:first-child").text();
-        //                 $("#img-preview").attr("src",uplodURL);
-        //                 $("#id").val($(this).find("td:nth-child(2)").text());
-        //                 $("#id").attr("disabled",true);
-        //                 $("#name").val($(this).find("td:nth-child(3)").text());
-        //                 $("#free").val($(this).find("td:nth-child(4)").text());
-        //                 $("#seat").val($(this).find("td:nth-child(5)").text());
-        //                 $("#schedule").val($(this).find("td:nth-child(6)").text());
-        //                 $("#period").val($(this).find("td:nth-child(7)").text());
-        //                 $("#description").text($(this).find("td:nth-child(8)").text());
-        //                 $("#outcome").text($(this).find("td:nth-child(9)").text());
-        //                 $("#audience").text($(this).find("td:nth-child(10)").text());
-        //
-        //
-        //             });
-        //
-        //             $("button.delete").off("click");
-        //             $("button.delete").click(function(eventData){
-        //
-        //                 eventData.stopPropagation();
-        //
-        //                 var row = $(this).parents("tr");
-        //                 var assigmentId = (row.find("td:nth-child(2)").text());
-        //
-        //                 if (confirm("Are you sure to delete this assigment?")){
-        //
-        //                     var ajaxConfig = {
-        //                         method : "DELETE",
-        //                         url: SERVER_URL + "/api/v1/newCourses/" + assigmentId,
-        //                         async: true
-        //                     }
-        //
-        //                     $.ajax(ajaxConfig).done(function(response,statusText,jxhr){
-        //
-        //                         $(row).remove();
-        //
-        //                     }).fail(function(jxhr,statusText,error){
-        //
-        //                         console.log(jxhr.responseText);
-        //
-        //                     });
-        //
-        //                 }
-        //             });
-        //
-        //         });
-        //
-        //         $('#myTable').DataTable({
-        //             'paging'      : true,
-        //             'lengthChange': false,
-        //             'searching'   : true,
-        //             'ordering'    : true,
-        //             'info'        : true,
-        //             'autoWidth'   : true,
-        //             'pageLength'  : 11,
-        //             language: {
-        //                 search: "_INPUT_",
-        //                 searchPlaceholder: "Search Assigment..."
-        //             }
-        //         });
-        //
-        //     }).fail(function(jxhr,statusText,error){
-        //         console.log(error);
-        //     });
-        // }
+        $(document).ready(function () {
+
+            var ajaxConfig = {
+                method: "GET",
+                url:SERVER_URL + "/api/v1/login",
+                async: true
+            };
+
+            $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+                console.log(result);
+                studentID = result[1];
+                possition = result[2];
+                console.log(possition);
+                $("#option").hide();
+                $("#option").text(possition);
+                $("#user_session").text(studentID);
+                if(studentID != null){
+                    $("#logout").show();
+                    $("#login").hide();
+                }else{
+                    $("#login").show();
+                    $("#logout").hide();
+                }
+                $("#btnSave").text('Update');
+
+                if($("#user_session").text() != 'User' &&  $("#option").text() == 'student'){
+
+                    var ajaxConfig = {
+                        method: "GET",
+                        url:SERVER_URL + "/api/v1/students/"+$("#user_session").text(),
+                        async: true
+                    };
+
+                    $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+                        console.log(result);
+                        $("#sid").val(result.sid),
+                            $("#fname").val(result.fname),
+                            $("#lname").val(result.lname),
+                            $("#bday").val(result.bday),
+                            $("#address").text(result.address),
+                            $("#phone").val(result.phone),
+                            $("#email").val(result.email),
+                            $("#password").val(result.password)
+
+
+                    }).fail(function(jxhr,statusText,error){
+                        console.log(error);
+                    });
+
+
+                }if(studentID != null && possition == 'lecturer'){
+                    var ajaxConfig = {
+                        method: "GET",
+                        url:SERVER_URL + "/api/v1/lectures/"+studentID,
+                        async: true
+                    };
+
+                    $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+                        console.log(result);
+                        $("#sid").val(result.aid),
+                            $("#fname").val(result.fname),
+                            $("#lname").val(result.lname),
+                            $("#bday").val(result.bday),
+                            $("#address").text(result.address),
+                            $("#phone").val(result.phone),
+                            $("#email").val(result.email),
+                            $("#password").val(result.password)
+
+                    }).fail(function(jxhr,statusText,error){
+                        console.log(error);
+                    });
+                }
+
+
+            }).fail(function(jxhr,statusText,error){
+                console.log(error);
+            });
+
+
+
+        });
+
+        $("#logout").click(function(){
+            var ajaxConfig = {
+                method: "POST",
+                url:SERVER_URL + "/api/v1/login/login",
+                async: true
+            };
+
+            $.ajax(ajaxConfig).done(function(result,statusText,jxhr){
+
+                studentID = 'User';
+                $("#user_session").text(studentID);
+                $("#login").show();
+                $("#logout").hide();
+                console.log(studentID);
+                alert("Log Out");
+            }).fail(function(jxhr,statusText,error){
+                console.log(error);
+            });
+        });//courseRegistration
 
 
 

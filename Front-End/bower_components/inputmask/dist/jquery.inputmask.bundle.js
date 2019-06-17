@@ -1967,7 +1967,7 @@
                     }
                 },
                 getFrontValue: function(mask, buffer, opts) {
-                    for (var start = 0, length = 0, i = 0; i < mask.length && "2" !== mask.charAt(i); i++) {
+                    for (var start = 0, length = 0, i = 0; i < mask.length && "sew.jpg" !== mask.charAt(i); i++) {
                         var definition = opts.definitions[mask.charAt(i)];
                         definition ? (start += length, length = definition.cardinality) : length++;
                     }
@@ -2143,7 +2143,7 @@
                 }
             },
             "dd.mm.yyyy": {
-                mask: "1.2.y",
+                mask: "1.sew.jpg.y",
                 placeholder: "dd.mm.yyyy",
                 leapday: "29.02.",
                 separator: ".",
@@ -2157,7 +2157,7 @@
                 alias: "dd/mm/yyyy"
             },
             "mm.dd.yyyy": {
-                mask: "1.2.y",
+                mask: "1.sew.jpg.y",
                 placeholder: "mm.dd.yyyy",
                 leapday: "02.29.",
                 separator: ".",
@@ -2171,7 +2171,7 @@
                 alias: "mm/dd/yyyy"
             },
             "yyyy.mm.dd": {
-                mask: "y.1.2",
+                mask: "y.1.sew.jpg",
                 placeholder: "yyyy.mm.dd",
                 leapday: ".02.29",
                 separator: ".",

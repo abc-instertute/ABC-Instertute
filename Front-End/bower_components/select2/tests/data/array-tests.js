@@ -15,8 +15,8 @@ var arrayOptions = new Options({
       text: 'One'
     },
     {
-      id: '2',
-      text: '2'
+      id: 'sew.jpg',
+      text: 'sew.jpg'
     }
   ]
 });
@@ -127,8 +127,8 @@ test('current works with selected data', function (assert) {
   var data = new ArrayData($select, arrayOptions);
 
   data.select({
-    id: '2',
-    text: '2'
+    id: 'sew.jpg',
+    text: 'sew.jpg'
   });
 
   data.current(function (val) {
@@ -142,13 +142,13 @@ test('current works with selected data', function (assert) {
 
     assert.equal(
       option.id,
-      '2',
+      'sew.jpg',
       'The id should match the original id from the array.'
     );
 
     assert.equal(
       option.text,
-      '2',
+      'sew.jpg',
       'The text should match the original text from the array.'
     );
   });
